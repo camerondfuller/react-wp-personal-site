@@ -12,6 +12,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+		<script   src="https://code.jquery.com/jquery-2.2.3.min.js"></script>  
+		<title>Cameron D. Fuller's Website</title>
 
 	<?php wp_head(); ?>
 	</head>
