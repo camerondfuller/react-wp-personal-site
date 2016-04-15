@@ -4,6 +4,7 @@ import {browserHistory} from 'react-router';
 
 
 var BlogLoop = React.createClass({
+
    getInitialState: function() {
       return {
          postData:[],
@@ -12,6 +13,7 @@ var BlogLoop = React.createClass({
          arrayIndex:0
       };
    },
+
    componentDidMount: function() {
       $.ajax({
          datatype:'json',
@@ -22,29 +24,35 @@ var BlogLoop = React.createClass({
          }.bind(this)
       })
    },
+
    testMethod:function() {
       this.setState({postContent:this.state.postData[this.state.arrayIndex].content.rendered});
       this.setState({postTitle:this.state.postData[this.state.arrayIndex].title.rendered});
-      if(this.state.arrayIndex ===9){
+      if(this.state.arrayIndex ===4){
          this.setState({arrayIndex:0});
       } else {
          this.setState({arrayIndex:this.state.arrayIndex + 1});
       }
    },
+
+   postContent:function() {
+      return this.postData[this.state.arrayIndex].content.rendered;
+   },
+
    nextPage: function() {
       browserHistory.push('/test');
    },
+
    render: function() {
       return (
          <div>
             <p>
                This is generated dynamically through react!
             </p>
-            <p>
-               <a onClick={this.testMethod}>Load Blog</a>
-               <h2>{this.state.postTitle}</h2>
-               {this.state.postContent}
-            </p>
+
+            <a onClick={this.testMethod}>Load Blog</a>
+            <h2>{this.state.postTitle}</h2>
+            <p>{this.state.postContent.replace(/<p[^>]*>/g,"").replace(/&#8217;/g, "'").replace(/<\/p>/g,"")}</p>
             <p>
                <a onClick={this.nextPage}>Test</a>
             </p>
