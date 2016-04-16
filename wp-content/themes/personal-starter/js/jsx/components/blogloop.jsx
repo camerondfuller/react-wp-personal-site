@@ -18,7 +18,7 @@ var BlogLoop = React.createClass({
       $.ajax({
          datatype:'json',
          method:'GET',
-         url:'http://camerondfuller.dev/wp-json/wp/v2/posts',
+         url:'/wp-json/wp/v2/posts',
          success: function(wpData) {
             this.setState({postData:wpData});
          }.bind(this)
@@ -35,14 +35,9 @@ var BlogLoop = React.createClass({
       }
    },
 
-   postContent:function() {
-      return this.postData[this.state.arrayIndex].content.rendered;
-   },
-
    nextPage: function() {
       browserHistory.push('/test');
    },
-
    render: function() {
       return (
          <div>
@@ -52,7 +47,7 @@ var BlogLoop = React.createClass({
 
             <a onClick={this.testMethod}>Load Blog</a>
             <h2>{this.state.postTitle}</h2>
-            <p>{this.state.postContent.replace(/<p[^>]*>/g,"").replace(/&#8217;/g, "'").replace(/<\/p>/g,"")}</p>
+            <p>{this.state.postContent.replace(/<[^>]*>/g,"").replace(/&#8217;/g, "'").replace(/&nbsp;/," ")}</p>
             <p>
                <a onClick={this.nextPage}>Test</a>
             </p>
