@@ -38,6 +38,9 @@ var BlogLoop = React.createClass({
    nextPage: function() {
       browserHistory.push('/test');
    },
+   createMarkup: function() {
+      return {__html: 'First &middot; Second'};
+   },
    render: function() {
       return (
          <div>
@@ -47,7 +50,7 @@ var BlogLoop = React.createClass({
 
             <a onClick={this.testMethod}>Load Blog</a>
             <h2>{this.state.postTitle}</h2>
-            <p>{this.state.postContent.replace(/<[^>]*>/g,"").replace(/&#8217;/g, "'").replace(/&nbsp;/," ")}</p>
+            <div dangerouslySetInnerHTML={{__html: this.state.postContent}}></div>
             <p>
                <a onClick={this.nextPage}>Test</a>
             </p>
