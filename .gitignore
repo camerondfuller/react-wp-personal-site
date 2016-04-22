@@ -52,14 +52,11 @@ wp-content/plugins/*
 # ========================================================== #
 wp-content/themes/*
 !wp-content/themes/personal-starter/
-!wp-content/themes/avada/
 !wp-content/themes/lychee/
 
 # Ignore npm packages #
 # =================== #
 wp-content/themes/personal-starter/node_modules/
 wp-content/themes/personal-starter/gulpfile.js
-wp-content/themes/avada/node_modules/
-wp-content/themes/avada/gulpfile.js
 wp-content/themes/lychee/node_modules/
 wp-content/themes/lychee/gulpfile.js
