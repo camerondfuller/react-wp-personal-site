@@ -57,9 +57,6 @@ var BlogLoop = React.createClass({
    render: function() {
       return (
          <div className="page-background">
-            <p>
-               This is generated dynamically through react!
-            </p>
             <div className="flex-center-center">
                <a className="button" onClick={this.loadBlog}>{this.buttonText()}</a>
             </div>

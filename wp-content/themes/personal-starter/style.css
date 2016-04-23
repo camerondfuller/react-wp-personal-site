@@ -737,6 +737,7 @@ object {
   border-radius: 5px;
   border: 1px solid #424242;
   padding: 1rem;
+  margin-top: 1rem;
   background-color: #FFD900;
   color: #333333; }
   .button:hover {
@@ -748,7 +749,7 @@ object {
   border-radius: 5px;
   background-color: #fff;
   width: 50%;
-  height: 60%;
+  height: 75%;
   padding: 2rem;
   margin-top: 3rem;
   position: absolute;
