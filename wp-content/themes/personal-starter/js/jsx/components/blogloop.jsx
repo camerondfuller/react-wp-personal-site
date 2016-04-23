@@ -25,11 +25,9 @@ var BlogLoop = React.createClass({
          }.bind(this)
       });
    },
-
    loadBlog:function() {
-
       this.setState({activate:true});
-      if(this.state.arrayIndex === 4){
+      if(this.state.arrayIndex === this.state.postData.length){
          this.setState({arrayIndex:0});
          this.setState({activate:false})
       } else {
@@ -37,6 +35,13 @@ var BlogLoop = React.createClass({
          this.setState({postTitle:this.state.postData[this.state.arrayIndex].title.rendered});
          this.setState({arrayIndex:this.state.arrayIndex + 1});
       };
+   },
+   buttonText:function() {
+      if(this.state.arrayIndex===0) {
+         return "Load Blog";
+      } else {
+         return "Next Post"
+      }
    },
    nextPage: function() {
       browserHistory.push('/test');
@@ -56,15 +61,12 @@ var BlogLoop = React.createClass({
                This is generated dynamically through react!
             </p>
             <div className="flex-center-center">
-               <a className="button" onClick={this.loadBlog}>Load Blog</a>
+               <a className="button" onClick={this.loadBlog}>{this.buttonText()}</a>
             </div>
-            <div className={"blog-wrapper flex-center-column container "+this.animateBlog()}>
+            <div className={"blog-wrapper container "+this.animateBlog()}>
                <h2>{this.state.postTitle}</h2>
-               <div dangerouslySetInnerHTML={{__html: this.state.postContent}}></div>
+               <div className="blog-content" dangerouslySetInnerHTML={{__html: this.state.postContent}}></div>
             </div>
-            <p>
-               <a onClick={this.nextPage}>Test</a>
-            </p>
          </div>
       );
    }

@@ -728,6 +728,9 @@ object {
   height: 80vh;
   position: relative; }
 
+.menu-wrapper {
+  width: 1024px; }
+
 .button {
   width: 150px;
   text-align: center;
@@ -742,13 +745,20 @@ object {
 
 .blog-wrapper {
   border: 1px solid #424242;
+  border-radius: 5px;
   background-color: #fff;
   width: 50%;
+  height: 60%;
   padding: 2rem;
   margin-top: 3rem;
   position: absolute;
   left: 25%;
-  opacity: 0; }
+  opacity: 0;
+  overflow: scroll;
+  text-overflow: ellipsis; }
+
+.blog-content {
+  position: relative; }
 
 .animate-blog {
   -webkit-animation: blog-slide-appear 2s;
