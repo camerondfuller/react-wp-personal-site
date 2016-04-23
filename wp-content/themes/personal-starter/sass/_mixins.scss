@@ -10,3 +10,35 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+
+
+//Keyframe Animations
+
+@keyframes blog-slide-appear {
+	0% {
+		left:-1500px;
+		opacity: 0;
+	}
+	70% {
+		left:25%;
+	}
+	75% {
+		left: 26%;
+	}
+	80% {
+		left: 24%;
+	}
+	85% {
+		left: 26%;
+	}
+	90% {
+		left: 24%;
+	}
+	95% {
+		left: 26%;
+	}
+	100% {
+		left: 25%;
+		opacity: 1;
+	}
+}

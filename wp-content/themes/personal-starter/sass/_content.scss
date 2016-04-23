@@ -47,3 +47,19 @@
 .bypostauthor {
 	display: block;
 }
+
+.container {
+	margin: 0 auto;
+}
+.flex-center-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-center-column {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
