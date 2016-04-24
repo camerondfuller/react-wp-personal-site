@@ -7,8 +7,9 @@
    background-color: $color_off_white;
    height: 80vh;
    position: relative;
-   background: url('http://camerondfuller.dev/wp-content/uploads/2016/04/Skyline.jpg');
+   background: url('http://camerondfuller.dev/wp-content/uploads/2016/04/Skyline-1024x683.jpg');
    background-size: cover;
+   background-repeat: no-repeat;
 }
 .menu-wrapper {
    width: 1024px;
@@ -22,6 +23,7 @@
    margin-top:1rem;
    background-color: $color_yellow;
    color:$color_black;
+   cursor: pointer;
 
    &:hover {
       filter:brightness(0.8);
@@ -32,7 +34,7 @@
    border-radius: 5px;
    background-color: $color__background-body;
    width:50%;
-   max-height: 75%;
+   max-height: 60vh;
    padding:2rem;
    margin-top: 3rem;
    position: absolute;

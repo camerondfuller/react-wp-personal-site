@@ -1,6 +1,5 @@
 import {Router, Route, browserHistory, Redirect } from 'react-router';
-import BlogLoop from './components/blogloop.jsx';
-import Test from './components/test.jsx';
+import HomePage from './components/home.jsx';
 
 
 var React = require('react');
@@ -12,8 +11,7 @@ var App = React.createClass({
    render: function() {
       return (
          <Router history={browserHistory}>
-            <Route path='/' component={BlogLoop} />
-            <Route path='/test' component={Test} />   
+            <Route path='/' component={HomePage} />
          </Router>
       );
    }
