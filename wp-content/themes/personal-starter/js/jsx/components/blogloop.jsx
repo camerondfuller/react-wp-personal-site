@@ -54,6 +54,7 @@ var BlogLoop = React.createClass({
          return "animate-blog";
       }
    },
+
    render: function() {
       return (
          <div className="page-background">

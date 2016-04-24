@@ -726,7 +726,9 @@ object {
 .page-background {
   background-color: #EFEFEF;
   height: 80vh;
-  position: relative; }
+  position: relative;
+  background: url("http://camerondfuller.dev/wp-content/uploads/2016/04/Skyline.jpg");
+  background-size: cover; }
 
 .menu-wrapper {
   width: 1024px; }
@@ -749,7 +751,7 @@ object {
   border-radius: 5px;
   background-color: #fff;
   width: 50%;
-  height: 75%;
+  max-height: 75%;
   padding: 2rem;
   margin-top: 3rem;
   position: absolute;
@@ -766,3 +768,11 @@ object {
           animation: blog-slide-appear 2s;
   left: 25%;
   opacity: 1; }
+
+.site-description {
+  margin: 0;
+  padding: 1.5rem; }
+
+.site-header {
+  background-color: transparent;
+  color: #424242; }

@@ -7,6 +7,8 @@
    background-color: $color_off_white;
    height: 80vh;
    position: relative;
+   background: url('http://camerondfuller.dev/wp-content/uploads/2016/04/Skyline.jpg');
+   background-size: cover;
 }
 .menu-wrapper {
    width: 1024px;
@@ -30,7 +32,7 @@
    border-radius: 5px;
    background-color: $color__background-body;
    width:50%;
-   height: 75%;
+   max-height: 75%;
    padding:2rem;
    margin-top: 3rem;
    position: absolute;
@@ -39,7 +41,6 @@
    overflow: scroll;
    text-overflow: ellipsis;
 }
-
 .blog-content {
    position: relative;
 }
@@ -47,4 +48,15 @@
    animation: blog-slide-appear 2s;
    left: 25%;
    opacity: 1;
+}
+
+
+//Header
+.site-description{
+   margin:0;
+   padding: 1.5rem;
+}
+.site-header {
+   background-color: transparent;
+   color:$color_gray;
 }
