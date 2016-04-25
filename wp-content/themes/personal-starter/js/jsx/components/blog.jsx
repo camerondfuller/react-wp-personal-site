@@ -1,6 +1,7 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 import {browserHistory} from 'react-router';
+import FeaturedImage from './featured-image.jsx';
 
 
 var BlogLoop = React.createClass({
@@ -10,6 +11,7 @@ var BlogLoop = React.createClass({
          postData:[],
          postContent:'',
          postTitle:'',
+         postImageID:'',
          arrayIndex:0,
          activate: false
       };
@@ -33,6 +35,7 @@ var BlogLoop = React.createClass({
       } else {
          this.setState({postContent:this.state.postData[this.state.arrayIndex].content.rendered});
          this.setState({postTitle:this.state.postData[this.state.arrayIndex].title.rendered});
+         this.setState({postImageID:this.state.postData[this.state.arrayIndex].featured_media});
          this.setState({arrayIndex:this.state.arrayIndex + 1});
       };
    },
@@ -63,6 +66,7 @@ var BlogLoop = React.createClass({
             </div>
             <div className={"blog-wrapper container "+this.animateBlog()}>
                <h2>{this.state.postTitle}</h2>
+               <FeaturedImage mediaID={1439} setImage={this.state.activate}/>
                <div className="blog-content" dangerouslySetInnerHTML={{__html: this.state.postContent}}></div>
             </div>
          </div>
