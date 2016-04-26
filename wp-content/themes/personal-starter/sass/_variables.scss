@@ -4,10 +4,11 @@ $base__space-unit: 1.5em;
 
 // Colors
 $color_black: #333333;
-$color_gray: #424242;
+$color_gray: #4E4548;
 $color_blue: #00CCD6;
 $color_off_white: #EFEFEF;
 $color_yellow: #FFD900;
+$gradient: rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 30%, rgba(0,0,0,0.9) 100%;
 
 $color__background-body: #fff;
 $color__text-main: #404040;
@@ -21,7 +22,7 @@ $color__background-ins: #fff9c0;
 $color__border-abbr: #666;
 
 $color__link: royalblue;
-$color__link-visited: purple;
+$color__link-visited: #00CCD6;
 $color__link-hover: midnightblue;
 
 // Typography

@@ -449,7 +449,7 @@ textarea {
 a {
   color: royalblue; }
   a:visited {
-    color: purple; }
+    color: #00CCD6; }
   a:hover, a:focus, a:active {
     color: midnightblue; }
   a:focus {
@@ -738,7 +738,7 @@ object {
   width: 150px;
   text-align: center;
   border-radius: 5px;
-  border: 1px solid #424242;
+  border: 1px solid #4E4548;
   padding: 1rem;
   margin-top: 1rem;
   background-color: #FFD900;
@@ -749,7 +749,7 @@ object {
             filter: brightness(0.8); }
 
 .blog-wrapper {
-  border: 1px solid #424242;
+  border: 1px solid #4E4548;
   border-radius: 5px;
   background-color: #fff;
   width: 50%;
@@ -775,6 +775,21 @@ object {
   margin: 0;
   padding: 1.5rem; }
 
-.site-header {
-  background-color: transparent;
-  color: #424242; }
+.site-branding {
+  background: #EFEFEF;
+  color: #4E4548;
+  border-bottom: 2px solid #333333; }
+
+.site-footer {
+  border-top: 2px solid #333333;
+  position: fixed;
+  bottom: 0;
+  background: linear-gradient(to top, #4E4548 0%, #333333 100%);
+  color: #EFEFEF;
+  width: 100vw;
+  height: 11vh; }
+
+.site-info {
+  position: fixed;
+  bottom: 0;
+  font-size: .5rem; }

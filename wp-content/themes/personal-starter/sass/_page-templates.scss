@@ -58,7 +58,24 @@
    margin:0;
    padding: 1.5rem;
 }
-.site-header {
-   background-color: transparent;
+.site-branding {
+   background: $color_off_white;
    color:$color_gray;
+   border-bottom: 2px solid $color_black;
+}
+
+//Footer
+.site-footer {
+   border-top:2px solid $color_black;
+   position: fixed;
+   bottom: 0;
+   background: linear-gradient( to top, $color_gray 0%, $color_black 100%);
+   color: $color_off_white;
+   width: 100vw;
+   height:11vh;
+}
+.site-info {
+   position: fixed;
+   bottom: 0;
+   font-size: .5rem;
 }
