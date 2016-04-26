@@ -61,7 +61,7 @@ var BlogLoop = React.createClass({
    render: function() {
       return (
          <div className="page-background">
-            <div className="flex-center-center">
+            <div className="">
                <a className="button" onClick={this.loadBlog}>{this.buttonText()}</a>
             </div>
             <div className={"blog-wrapper container "+this.animateBlog()}>

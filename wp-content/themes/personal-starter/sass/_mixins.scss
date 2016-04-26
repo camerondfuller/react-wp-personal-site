@@ -10,11 +10,49 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+@mixin tablet {
+   @media (min-width: 600px) {
+      @content;
+   }
+}
+@mixin desktop {
+   @media (min-width: 1000px) {
+      @content;
+   }
+}
 
 
 //Keyframe Animations
 
-@keyframes blog-slide-appear {
+@keyframes mobile-blog-slide-appear {
+	0% {
+		left:-1500px;
+		opacity: 0;
+	}
+	70% {
+		left:1rem;
+	}
+	75% {
+		left: 1.1rem;
+	}
+	80% {
+		left: .9rem;
+	}
+	85% {
+		left: 1.1rem;
+	}
+	90% {
+		left: .9rem;
+	}
+	95% {
+		left: 1.1rem;
+	}
+	100% {
+		left: 1rem;
+		opacity: 1;
+	}
+}
+@keyframes desktop-blog-slide-appear {
 	0% {
 		left:-1500px;
 		opacity: 0;

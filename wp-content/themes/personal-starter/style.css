@@ -43,7 +43,46 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Page Templates
 	## Front page
 --------------------------------------------------------------*/
-@-webkit-keyframes blog-slide-appear {
+@-webkit-keyframes mobile-blog-slide-appear {
+  0% {
+    left: -1500px;
+    opacity: 0; }
+  70% {
+    left: 1rem; }
+  75% {
+    left: 1.1rem; }
+  80% {
+    left: .9rem; }
+  85% {
+    left: 1.1rem; }
+  90% {
+    left: .9rem; }
+  95% {
+    left: 1.1rem; }
+  100% {
+    left: 1rem;
+    opacity: 1; } }
+@keyframes mobile-blog-slide-appear {
+  0% {
+    left: -1500px;
+    opacity: 0; }
+  70% {
+    left: 1rem; }
+  75% {
+    left: 1.1rem; }
+  80% {
+    left: .9rem; }
+  85% {
+    left: 1.1rem; }
+  90% {
+    left: .9rem; }
+  95% {
+    left: 1.1rem; }
+  100% {
+    left: 1rem;
+    opacity: 1; } }
+
+@-webkit-keyframes desktop-blog-slide-appear {
   0% {
     left: -1500px;
     opacity: 0; }
@@ -62,7 +101,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   100% {
     left: 25%;
     opacity: 1; } }
-@keyframes blog-slide-appear {
+
+@keyframes desktop-blog-slide-appear {
   0% {
     left: -1500px;
     opacity: 0; }
@@ -257,6 +297,10 @@ table {
 td,
 th {
   padding: 0; }
+
+* {
+  box-sizing: border-box;
+  outline: none; }
 
 /*--------------------------------------------------------------
 # Embedded Fonts
@@ -735,7 +779,7 @@ object {
   width: 1024px; }
 
 .button {
-  width: 150px;
+  width: 90%;
   text-align: center;
   border-radius: 5px;
   border: 1px solid #4E4548;
@@ -743,33 +787,51 @@ object {
   margin-top: 1rem;
   background-color: #FFD900;
   color: #333333;
-  cursor: pointer; }
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  left: 1rem; }
   .button:hover {
     -webkit-filter: brightness(0.8);
             filter: brightness(0.8); }
+  @media (min-width: 1000px) {
+    .button {
+      width: 150px;
+      top: 2rem;
+      left: 10%; } }
 
 .blog-wrapper {
+  position: absolute;
+  left: 0;
   border: 1px solid #4E4548;
   border-radius: 5px;
   background-color: #fff;
-  width: 50%;
-  max-height: 60vh;
+  width: 90%;
+  max-height: 65vh;
   padding: 2rem;
-  margin-top: 3rem;
-  position: absolute;
-  left: 25%;
+  margin-top: 5rem;
   opacity: 0;
-  overflow: scroll;
-  text-overflow: ellipsis; }
+  overflow: scroll; }
+  @media (min-width: 1000px) {
+    .blog-wrapper {
+      width: 50%;
+      left: 25%;
+      margin-top: 3rem;
+      max-height: 70vh; } }
 
 .blog-content {
   position: relative; }
 
 .animate-blog {
-  -webkit-animation: blog-slide-appear 2s;
-          animation: blog-slide-appear 2s;
-  left: 25%;
+  -webkit-animation: mobile-blog-slide-appear 2s;
+          animation: mobile-blog-slide-appear 2s;
+  left: 1rem;
   opacity: 1; }
+  @media (min-width: 1000px) {
+    .animate-blog {
+      -webkit-animation: desktop-blog-slide-appear 2s;
+              animation: desktop-blog-slide-appear 2s;
+      left: 25%; } }
 
 .site-description {
   margin: 0;
