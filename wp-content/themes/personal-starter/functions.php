@@ -105,3 +105,17 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
+
+// Add a Featured Image to the Posts JSON
+function my_rest_prepare_post( $data, $post, $request ) {
+
+	$_data = $data->data;
+
+	$thumbnail_id = get_post_thumbnail_id( $post->ID );
+	$thumbnail = wp_get_attachment_image_src( $thumbnail_id, full, false );
+	$_data['featured_image_thumbnail_url'] = $thumbnail[0];
+	$data->data = $_data;
+
+	return $data;
+}
+add_filter( 'rest_prepare_post', 'my_rest_prepare_post', 10, 3 );

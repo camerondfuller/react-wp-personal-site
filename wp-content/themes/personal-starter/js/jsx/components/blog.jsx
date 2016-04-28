@@ -1,7 +1,5 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
-import {browserHistory} from 'react-router';
-import FeaturedImage from './featured-image.jsx';
 
 
 var BlogLoop = React.createClass({
@@ -11,7 +9,7 @@ var BlogLoop = React.createClass({
          postData:[],
          postContent:'',
          postTitle:'',
-         postImageID:'',
+         postImage:'',
          arrayIndex:0,
          activate: false
       };
@@ -30,13 +28,13 @@ var BlogLoop = React.createClass({
    loadBlog:function() {
       this.setState({activate:true});
       if(this.state.arrayIndex === this.state.postData.length){
-         this.setState({arrayIndex:0});
-         this.setState({activate:false})
+         this.setState({arrayIndex:0,
+                        activate:false})
       } else {
-         this.setState({postContent:this.state.postData[this.state.arrayIndex].content.rendered});
-         this.setState({postTitle:this.state.postData[this.state.arrayIndex].title.rendered});
-         this.setState({postImageID:this.state.postData[this.state.arrayIndex].featured_media});
-         this.setState({arrayIndex:this.state.arrayIndex + 1});
+         this.setState({postContent:this.state.postData[this.state.arrayIndex].content.rendered,
+                        postTitle:this.state.postData[this.state.arrayIndex].title.rendered,
+                        postImage:this.state.postData[this.state.arrayIndex].featured_image_thumbnail_url,
+                        arrayIndex:this.state.arrayIndex + 1});
       };
    },
    buttonText:function() {
@@ -46,18 +44,11 @@ var BlogLoop = React.createClass({
          return "Next Post"
       }
    },
-   nextPage: function() {
-      browserHistory.push('/test');
-   },
-   createMarkup: function() {
-      return {__html: 'First &middot; Second'};
-   },
    animateBlog: function() {
       if(this.state.activate===true) {
          return "animate-blog";
       }
    },
-
    render: function() {
       return (
          <div className="page-background">
@@ -66,7 +57,7 @@ var BlogLoop = React.createClass({
             </div>
             <div className={"blog-wrapper container "+this.animateBlog()}>
                <h2>{this.state.postTitle}</h2>
-               <FeaturedImage mediaID={1439} setImage={this.state.activate}/>
+               <a href={this.state.postImage}><img className="" src={this.state.postImage}/></a>
                <div className="blog-content" dangerouslySetInnerHTML={{__html: this.state.postContent}}></div>
             </div>
          </div>
