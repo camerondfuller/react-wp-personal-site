@@ -2,6 +2,7 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 import {browserHistory} from 'react-router';
 import BlogLoop from './blog.jsx';
+import Page from './page.jsx'
 
 var HomePage = React.createClass({
    getInitialState: function() {
@@ -11,8 +12,9 @@ var HomePage = React.createClass({
    },
    render: function() {
       return (
-         <div>
+         <div className="page-background">
             <BlogLoop />
+            <Page />
          </div>
       );
    }

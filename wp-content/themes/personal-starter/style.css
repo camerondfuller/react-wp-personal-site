@@ -302,6 +302,9 @@ th {
   box-sizing: border-box;
   outline: none; }
 
+.fa {
+  cursor: pointer; }
+
 /*--------------------------------------------------------------
 # Embedded Fonts
 --------------------------------------------------------------*/
@@ -803,6 +806,9 @@ object {
       top: 2rem;
       left: 10%; } }
 
+.about-btn {
+  top: 6rem; }
+
 .blog-wrapper {
   position: absolute;
   left: 0;
@@ -836,6 +842,12 @@ object {
               animation: desktop-blog-slide-appear 2s;
       left: 25%; } }
 
+.hide-blog {
+  -webkit-animation: mobile-blog-slide-hide 1s;
+          animation: mobile-blog-slide-hide 1s;
+  left: -1500px;
+  opacity: 0; }
+
 .site-description {
   margin: 0;
   padding: 1.5rem; }
@@ -858,3 +870,6 @@ object {
   position: fixed;
   bottom: 0;
   font-size: .5rem; }
+
+.close {
+  float: right; }

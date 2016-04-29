@@ -4,36 +4,25 @@ var PropTypes = React.PropTypes;
 var FeaturedImage = React.createClass({
    getInitialState: function() {
       return {
-         mediaData:{},
-         sourceURL:''
+         mediaData:[]
       };
    },
-   componentDidMount: function() {
+   componentWillUpdate: function() {
       $.ajax({
          datatype:'json',
          method:'GET',
-         url:'wp-json/wp/v2/media/'+this.props.mediaID,
+         url:'wp-json/wp/v2/media/'+this.props.imageID,
          success: function(wpData) {
             this.setState({mediaData:wpData});
          }.bind(this)
       });
    },
-   componentWillReceiveProps: function(newProps){
-      if (newProps.setImage === true) {
-         this.setState({sourceURL:this.state.mediaData.source_url})
-      };
-   },
    render: function() {
       return (
-         <div>
-            <img src={this.state.sourceURL}/>
-         </div>
+         <div />
       );
    }
 
 });
 
 module.exports = FeaturedImage;
-
-//PropTypes
-//mediaID = the json object for the featured image based on the post

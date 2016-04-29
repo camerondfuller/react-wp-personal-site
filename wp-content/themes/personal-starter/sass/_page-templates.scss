@@ -42,6 +42,9 @@
       left:10%;
    };
 }
+.about-btn {
+   top: 6rem;
+}
 .blog-wrapper {
    position: absolute;
    left:0;
@@ -75,7 +78,11 @@
       left:25%;
    };
 }
-
+.hide-blog {
+   animation: mobile-blog-slide-hide 1s;
+   left: -1500px;
+   opacity: 0;
+}
 
 //Header
 .site-description{
@@ -102,4 +109,7 @@
    position: fixed;
    bottom: 0;
    font-size: .5rem;
+}
+.close {
+   float:right;
 }
