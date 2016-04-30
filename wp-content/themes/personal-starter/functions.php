@@ -106,7 +106,7 @@ require get_template_directory() . '/inc/template-tags.php';
  */
 require get_template_directory() . '/inc/extras.php';
 
-// Add a Featured Image to the Posts JSON
+// Add a Featured Image URL to the Posts JSON
 function my_rest_prepare_post( $data, $post, $request ) {
 
 	$_data = $data->data;
@@ -120,6 +120,8 @@ function my_rest_prepare_post( $data, $post, $request ) {
 }
 add_filter( 'rest_prepare_post', 'my_rest_prepare_post', 10, 3 );
 
+// ADD a Featured Image URL to the Pages JSON
+
 function my_rest_prepare_page( $data, $post, $request ) {
 
 	$_data = $data->data;
@@ -132,3 +134,6 @@ function my_rest_prepare_page( $data, $post, $request ) {
 	return $data;
 }
 add_filter( 'rest_prepare_page', 'my_rest_prepare_page', 10, 3 );
+
+// Add CFS Data to JSON
+add_action( 'rest_api_init', 'example_add_cfs' );

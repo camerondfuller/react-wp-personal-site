@@ -10,6 +10,11 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+@mixin center-text {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 @mixin tablet {
    @media (min-width: 600px) {
       @content;
@@ -61,19 +66,19 @@
 		left:25%;
 	}
 	75% {
-		left: 26%;
+		left: 25.5%;
 	}
 	80% {
-		left: 24%;
+		left: 24.5%;
 	}
 	85% {
-		left: 26%;
+		left: 25.5%;
 	}
 	90% {
-		left: 24%;
+		left: 24.5%;
 	}
 	95% {
-		left: 26%;
+		left: 25.5%;
 	}
 	100% {
 		left: 25%;
