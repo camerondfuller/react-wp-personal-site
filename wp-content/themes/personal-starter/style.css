@@ -122,6 +122,18 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
     left: 25%;
     opacity: 1; } }
 
+@-webkit-keyframes down-arrow {
+  0% {
+    bottom: 40px; }
+  100% {
+    bottom: 20px; } }
+
+@keyframes down-arrow {
+  0% {
+    bottom: 40px; }
+  100% {
+    bottom: 20px; } }
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -329,6 +341,34 @@ th {
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/opensans/opensans-bold-webfont.eot");
+  src: url("../fonts/opensans/opensans-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans/opensans-bold-webfont.woff2") format("woff2"), url("../fonts/opensans/opensans-bold-webfont.woff") format("woff"), url("../fonts/opensans/opensans-bold-webfont.ttf") format("truetype"), url("../fonts/opensans/opensans-bold-webfont.svg#lobster_1.3regular") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/opensans/opensans-bolditalic-webfont.eot");
+  src: url("../fonts/opensans/opensans-bolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans/opensans-bolditalic-webfont.woff2") format("woff2"), url("../fonts/opensans/opensans-bolditalic-webfont.woff") format("woff"), url("../fonts/opensans/opensans-bolditalic-webfont.ttf") format("truetype"), url("../fonts/opensans/opensans-bolditalic-webfont.svg#lobster_1.3regular") format("svg");
+  font-weight: bold;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/opensans/opensans-light-webfont.eot");
+  src: url("../fonts/opensans/opensans-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans/opensans-light-webfont.woff2") format("woff2"), url("../fonts/opensans/opensans-light-webfont.woff") format("woff"), url("../fonts/opensans/opensans-light-webfont.ttf") format("truetype"), url("../fonts/opensans/opensans-light-webfont.svg#lobster_1.3regular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/opensans/opensans-lightitalic-webfont.eot");
+  src: url("../fonts/opensans/opensans-lightitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans/opensans-lightitalic-webfont.woff2") format("woff2"), url("../fonts/opensans/opensans-lightitalic-webfont.woff") format("woff"), url("../fonts/opensans/opensans-lightitalic-webfont.ttf") format("truetype"), url("../fonts/opensans/opensans-lightitalic-webfont.svg#lobster_1.3regular") format("svg");
+  font-weight: normal;
+  font-style: italic; }
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -338,7 +378,7 @@ input,
 select,
 textarea {
   color: #404040;
-  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
@@ -515,15 +555,20 @@ textarea {
 --------------------------------------------------------------*/
 /* Links */
 a {
-  color: #FFD900; }
+  color: #FFD900;
+  -webkit-filter: brightness(0.75);
+          filter: brightness(0.75);
+  text-decoration: none; }
   a:visited {
     color: #FFD900; }
   a:hover, a:focus, a:active {
-    color: #4E4548; }
+    -webkit-filter: brightness(1);
+            filter: brightness(1);
+    text-decoration: underline; }
   a:focus {
-    outline: thin dotted; }
+    outline: none; }
   a:hover, a:active {
-    outline: 0; }
+    outline: none; }
 
 /* Menus */
 .main-navigation {
@@ -780,17 +825,6 @@ object {
   font-size: 1.5rem;
   letter-spacing: 5px;
   font-family: 'Ostrich'; }
-  .header a {
-    color: #FFD900;
-    -webkit-filter: brightness(0.8);
-            filter: brightness(0.8);
-    text-decoration: none; }
-    .header a:visited {
-      color: #FFD900; }
-    .header a:hover {
-      -webkit-filter: brightness(1);
-              filter: brightness(1);
-      text-decoration: underline; }
 
 .menu-cont {
   display: -webkit-flex;
@@ -813,37 +847,85 @@ object {
   background-color: #EFEFEF; }
 
 .hero-banner {
-  height: 607px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%), url("../assets/fixed-images/new-york-skyline.jpg") no-repeat center;
-  background-size: cover;
+  position: relative; }
+  @media (min-width: 1000px) {
+    .hero-banner {
+      height: 90vh;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%), url("../assets/fixed-images/new-york-skyline.jpg") no-repeat center;
+      background-size: cover;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; } }
+
+.banner-middle-text {
+  color: #fff;
+  text-align: center; }
+  .banner-middle-text span {
+    font-family: 'Ostrich', serif;
+    letter-spacing: 10px; }
+    @media (min-width: 1000px) {
+      .banner-middle-text span {
+        font-size: 4rem; } }
+  .banner-middle-text p {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase; }
+    @media (min-width: 1000px) {
+      .banner-middle-text p {
+        font-size: 1.5rem; } }
+
+.down-arrow {
+  position: absolute;
+  left: 49%;
+  bottom: 40px;
+  font-size: 3rem;
+  color: #fff;
+  -webkit-animation: down-arrow 0.5s infinite alternate;
+          animation: down-arrow 0.5s infinite alternate; }
+
+.About {
+  height: 80vh;
+  background-color: #EFEFEF; }
+
+.Portfolio {
+  height: 80vh;
+  background-color: #4E4548; }
+
+.Blog {
+  height: 80vh;
+  background-color: #EFEFEF; }
+
+.blog-button {
+  position: absolute;
+  top: 2525px;
+  left: 10%; }
+
+.Contact {
+  height: 80vh;
+  background-color: #4E4548; }
+
+footer {
+  width: 100vw;
+  height: 15vh;
+  background-color: #1a1a1a;
+  color: #EFEFEF;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center; }
 
-.banner-middle-text {
-  position: relative;
-  font-size: 4rem;
-  font-family: 'Chunk', serif;
-  color: #fff; }
-
-.down-arrow {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: absolute;
-  bottom: 50px;
-  left: 50%;
-  font-size: 2rem;
-  color: #000; }
-
-.menu-wrapper {
-  width: 1024px; }
+.social .fa {
+  padding: 1rem; }
 
 .button {
   width: 90%;
@@ -909,15 +991,6 @@ object {
   left: -1500px;
   opacity: 0; }
 
-.site-description {
-  margin: 0;
-  padding: 1.5rem; }
-
-.site-branding {
-  background: #EFEFEF;
-  color: #4E4548;
-  border-bottom: 2px solid #333333; }
-
 .site-footer {
   border-top: 2px solid #333333;
   position: fixed;
@@ -925,12 +998,4 @@ object {
   background: linear-gradient(to top, #4E4548 0%, #333333 100%);
   color: #EFEFEF;
   width: 100vw;
-  height: 11vh; }
-
-.site-info {
-  position: fixed;
-  bottom: 0;
-  font-size: .5rem; }
-
-.close {
-  float: right; }
+  height: 15vh; }
