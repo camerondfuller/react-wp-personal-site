@@ -16,6 +16,6 @@
 		</div> <!-- #mountnode -->
 		<!-- Beginning of JS Scripts -->
 		<script type="text/javascript" src="wp-content/themes/personal-starter/build/js/main.js"></script>
-		<!-- <script type="text/javascript" src="wp-content/themes/personal-starter/build/js/jq-functions.js"></script> -->
+		<script type="text/javascript" src="wp-content/themes/personal-starter/build/js/jq-functions.js"></script>
 	</body>
 </html>

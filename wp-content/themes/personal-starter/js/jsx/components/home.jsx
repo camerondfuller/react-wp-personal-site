@@ -2,7 +2,7 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 import {browserHistory} from 'react-router';
 import BlogLoop from './blog.jsx';
-import About from './about.jsx'
+import About from './about.jsx';
 
 var HomePage = React.createClass({
 
@@ -16,10 +16,10 @@ var HomePage = React.createClass({
                      <span>Cameron D. Fuller</span>
                   </div>
                   <nav className="main-nav">
-                     <span><a href="#">About</a></span>
-                     <span><a href="#">Portfolio</a></span>
-                     <span><a href="#">Blog</a></span>
-                     <span><a href="#">Contact</a></span>
+                     <span><a href="#about">About</a></span>
+                     <span><a href="#portfolio">Portfolio</a></span>
+                     <span><a href="#blog">Blog</a></span>
+                     <span><a href="#contact">Contact</a></span>
                   </nav>
                </div>
             </header>
@@ -27,6 +27,7 @@ var HomePage = React.createClass({
 
             {/*Beginning of body*/}
             <div className="page-background">
+
                <section className="hero-banner">
                   <div className="down-arrow">
                      <i className="fa fa-angle-down"></i>
@@ -36,16 +37,20 @@ var HomePage = React.createClass({
                      <p>Writer | Developer | Film Maker</p>
                   </div>
                </section>
-               <section className="About">
-                  <About />
+
+               <section className="About" id="about">
+                  <About source='wp-json/wp/v2/pages'/>
                </section>
-               <section className="Portfolio">
+
+               <section className="Portfolio" id="portfolio">
                   {/*Load the Portfolio component here*/}
                </section>
-               <section className="Blog">
-                  <BlogLoop />
+
+               <section className="Blog" id="blog">
+                  <BlogLoop source="/wp-json/wp/v2/posts"/>
                </section>
-               <section className="Contact">
+
+               <section className="Contact" id="contact">
 
                </section>
             </div>
