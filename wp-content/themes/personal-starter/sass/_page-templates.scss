@@ -84,9 +84,23 @@
    width: 33%;
    padding-right: 1rem;
 }
+
+//Portfolio
 .Portfolio {
    height:80vh;
    background-color: $color_gray;
+   position: relative;
+   color:$color_off_white;
+}
+.left-side-name {
+   position: absolute;
+   font-family: 'Ostrich', sans-serif;
+   font-size: 8rem;
+   letter-spacing: 20px;
+   transform: rotate(-90deg);
+   left:-175px;
+   bottom: 230px;
+   filter: brightness(0.5);
 }
 
 //Blog

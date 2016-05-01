@@ -950,7 +950,21 @@ object {
 
 .Portfolio {
   height: 80vh;
-  background-color: #4E4548; }
+  background-color: #4E4548;
+  position: relative;
+  color: #EFEFEF; }
+
+.left-side-name {
+  position: absolute;
+  font-family: 'Ostrich', sans-serif;
+  font-size: 8rem;
+  letter-spacing: 20px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  left: -175px;
+  bottom: 230px;
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5); }
 
 .Blog {
   height: 80vh;
