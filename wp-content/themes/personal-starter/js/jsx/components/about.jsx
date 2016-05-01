@@ -19,6 +19,9 @@ var About = React.createClass({
      });
   }.bind(this));
    },
+   componentWillUnmount: function() {
+      this.serverRequest.abort();
+   },
    render: function() {
       return (
          <div className="about-section">

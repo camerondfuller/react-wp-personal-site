@@ -3,6 +3,7 @@ var PropTypes = React.PropTypes;
 import {browserHistory} from 'react-router';
 import BlogLoop from './blog.jsx';
 import About from './about.jsx';
+import Portfolio from './portfolio.jsx';
 
 var HomePage = React.createClass({
 
@@ -43,7 +44,7 @@ var HomePage = React.createClass({
                </section>
 
                <section className="Portfolio" id="portfolio">
-                  {/*Load the Portfolio component here*/}
+                  <Portfolio source='wp-json/wp/v2/pages' />
                </section>
 
                <section className="Blog" id="blog">

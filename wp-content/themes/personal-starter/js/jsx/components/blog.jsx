@@ -19,16 +19,24 @@ var BlogLoop = React.createClass({
      });
    }.bind(this));
    },
+   componentWillUnmount: function() {
+      this.serverRequest.abort();
+   },
    nextPost:function() {
-      this.setState({arrayIndex:this.state.arrayIndex + 1});
+      var max = this.state.arrayIndex + 1;
+      if(max === this.state.postData.length) {
+         this.setState({arrayIndex:0})
+      } else {
+         this.setState({arrayIndex:this.state.arrayIndex + 1});
+      }
    },
    render: function() {
       return (
-         <div className="triple-column container">
+         <div className="double-column container">
             <div className="single-column">
                <BlogContent object={this.state.postData} arrayIndex={this.state.arrayIndex} />
             </div>
-            <a onClick={this.nextPost}>Next Post</a>
+            <div className="next-class" onClick={this.nextPost}>Next Post<i className="fa fa-angle-double-right"></i></div>
          </div>
 
       );
