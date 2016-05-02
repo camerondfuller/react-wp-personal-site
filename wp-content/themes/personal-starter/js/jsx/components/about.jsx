@@ -8,6 +8,7 @@ var About = React.createClass({
    getInitialState: function() {
       return {
          pageObject:[],
+         arrayIndex:1
       };
    },
    componentWillMount: function() {
@@ -25,7 +26,7 @@ var About = React.createClass({
    render: function() {
       return (
          <div className="about-section">
-            <PageContent object={this.state.pageObject}/>
+            <PageContent object={this.state.pageObject} arrayIndex={this.state.arrayIndex}/>
          </div>
       );
    }
