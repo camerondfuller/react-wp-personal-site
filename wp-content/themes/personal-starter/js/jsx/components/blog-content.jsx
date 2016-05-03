@@ -27,7 +27,7 @@ var BlogContent = React.createClass({
    render: function() {
       return (
          <div>
-            <h2>{this.state.postTitle}</h2>
+            <h2 dangerouslySetInnerHTML={{__html: this.state.postTitle}}></h2>
             <img src={this.state.postImage} className={this.imageClass()}/>
             <div className="blog-content" dangerouslySetInnerHTML={{__html: this.state.postContent}}></div>
          </div>
