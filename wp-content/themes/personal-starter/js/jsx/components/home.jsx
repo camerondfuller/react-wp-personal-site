@@ -20,6 +20,7 @@ var HomePage = React.createClass({
                      <span><a href="#about">About</a></span>
                      <span><a href="#portfolio">Portfolio</a></span>
                      <span><a href="#blog">Blog</a></span>
+                     <span><a href="#film">Film</a></span>
                      <span><a href="#contact">Contact</a></span>
                   </nav>
                </div>
@@ -49,6 +50,17 @@ var HomePage = React.createClass({
 
                <section className="Blog" id="blog">
                   <BlogLoop source="/wp-json/wp/v2/posts"/>
+               </section>
+
+               <section className="Film" id="film">
+                  <div className="left-side-name film-border-name">
+                     <span>Film</span>
+                  </div>
+                  <div className="container">
+                     <h2>Marco Solo</h2>
+                     <iframe src="https://player.vimeo.com/video/145091486" width="640" height="360" frameBorder="0" allowFullScreen></iframe>
+                     <p><a href="https://vimeo.com/145091486">Marco Solo - Episode 1 - Trish</a> from <a href="https://vimeo.com/marcosolo">Marco Solo: The Web Series</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+                  </div>
                </section>
 
                <section className="Contact" id="contact">

@@ -1054,9 +1054,29 @@ object {
   left: -1500px;
   opacity: 0; }
 
-.Contact {
+.Film {
+  position: relative;
   height: 80vh;
-  background-color: #4E4548; }
+  background-color: #4E4548;
+  color: #EFEFEF;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center; }
+
+.film-border-name {
+  left: -25px;
+  bottom: 50px; }
+
+.Contact {
+  height: 60vh;
+  background-color: #EFEFEF; }
 
 footer {
   width: 100vw;
