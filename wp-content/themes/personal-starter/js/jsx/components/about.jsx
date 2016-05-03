@@ -8,7 +8,7 @@ var About = React.createClass({
    getInitialState: function() {
       return {
          pageObject:[],
-         arrayIndex:1
+         arrayIndex:this.props.order
       };
    },
    componentWillMount: function() {

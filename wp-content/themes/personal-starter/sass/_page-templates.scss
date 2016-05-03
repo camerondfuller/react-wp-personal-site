@@ -87,10 +87,13 @@
 
 //Portfolio
 .Portfolio {
-   height:80vh;
+   height:95vh;
    background-color: $color_gray;
    position: relative;
    color:$color_off_white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 .left-side-name {
    position: absolute;
@@ -99,12 +102,35 @@
    letter-spacing: 20px;
    transform: rotate(-90deg);
    left:-175px;
-   bottom: 230px;
+   bottom: 200px;
    filter: brightness(0.5);
 }
+.portfolio-inner {
+   height: 95%;
+   display: flex;
+   flex-wrap: wrap;
+}
+.port-cont-single {
+   width: 33%;
+   text-align: center;
+}
+.port-title {
+   text-align: center;
+}
+.port-text {
+
+}
+.port-img {
+   filter:brightness(0.8);
+   border-radius: 5px;
+   &:hover {
+      filter: brightness(1);
+   }
+}
+
 //Blog
 .Blog {
-   height:80vh;
+   height:95vh;
    background-color: $color_off_white;
    display: flex;
    align-items: center;
@@ -165,11 +191,13 @@ footer {
    justify-content: space-between;
    align-items: center;
 }
+.copyright {
+   display: flex;
+   align-items: center;
+}
 .social .fa {
    padding:1rem;
 }
-
-//Header
 
 
 //Footer

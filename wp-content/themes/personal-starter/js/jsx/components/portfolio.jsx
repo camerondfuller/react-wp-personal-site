@@ -6,7 +6,6 @@ var Portfolio = React.createClass({
    getInitialState: function() {
       return {
          pageData:[],
-         arrayIndex:0
       };
    },
    componentWillMount: function() {
@@ -25,8 +24,13 @@ var Portfolio = React.createClass({
       return (
          <div>
             <div className="left-side-name"><span>Portfolio</span></div>
-            <div className="buttons container">
-               <PortfolioContent object={this.state.pageData} arrayIndex={this.state.arrayIndex} className="triple"/>
+            <div className="portfolio-inner container">
+               <PortfolioContent object={this.state.pageData} arrayIndex={0}/>
+               <PortfolioContent object={this.state.pageData} arrayIndex={1}/>
+               <PortfolioContent object={this.state.pageData} arrayIndex={2}/>
+               <PortfolioContent object={this.state.pageData} arrayIndex={3}/>
+               <PortfolioContent object={this.state.pageData} arrayIndex={4}/>
+               <PortfolioContent object={this.state.pageData} arrayIndex={5}/>
             </div>
          </div>
       );

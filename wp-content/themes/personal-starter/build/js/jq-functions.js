@@ -2,6 +2,7 @@ $(function() {
    //Cache reference to window and animation items
    var $animation_elements = $('.animation-element');
    var $window = $(window);
+
    // Closes the sidebar menu
    $('#menu-close').click(function(e) {
       e.preventDefault();
@@ -36,7 +37,7 @@ $(function() {
    });
 
    //Beginning of Window Scroll Animation Function
-   var check_if_in_view = function() {
+   function check_if_in_view() {
       var window_height = $window.height();
       var window_top_position = $window.scrollTop();
       var window_bottom_position = (window_top_position + window_height);

@@ -18,13 +18,13 @@ var PageContent = React.createClass({
      },
    render: function() {
       return (
-         <div>
-            <div>
-               <h2>{this.state.pageTitle}</h2>
+         <div className="port-cont-single">
+            <div className="port-title">
+               <h3>{this.state.pageTitle}</h3>
             </div>
-            <div className="container">
-               <div className="portfolio-text" dangerouslySetInnerHTML={{ __html: this.state.pageContent}}></div>
-               <img src={this.state.featuredImageURL} />
+            <div>
+               <div className="port-text" dangerouslySetInnerHTML={{ __html: this.state.pageContent}}></div>
+               <img src={this.state.featuredImageURL} className="port-img"/>
             </div>
          </div>
       );
