@@ -136,4 +136,3 @@ function my_rest_prepare_page( $data, $post, $request ) {
 add_filter( 'rest_prepare_page', 'my_rest_prepare_page', 10, 3 );
 
 // Add CFS Data to JSON
-add_action( 'rest_api_init', 'example_add_cfs' );
