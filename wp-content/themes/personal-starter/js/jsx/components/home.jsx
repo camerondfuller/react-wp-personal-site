@@ -4,6 +4,7 @@ import {browserHistory} from 'react-router';
 import BlogLoop from './blog.jsx';
 import About from './about.jsx';
 import Portfolio from './portfolio.jsx';
+import Contact from './contact.jsx';
 
 var HomePage = React.createClass({
 
@@ -41,6 +42,9 @@ var HomePage = React.createClass({
                </section>
 
                <section className="About" id="about">
+                  <div className="left-side-name about-border-name">
+                     <span>about</span>
+                  </div>
                   <About source='wp-json/wp/v2/pages?filter[orderby]=menu_order' order={6}/>
                </section>
 
@@ -49,6 +53,9 @@ var HomePage = React.createClass({
                </section>
 
                <section className="Blog" id="blog">
+                  <div className="left-side-name film-border-name">
+                     <span>Blog</span>
+                  </div>
                   <BlogLoop source="/wp-json/wp/v2/posts"/>
                </section>
 
@@ -64,7 +71,7 @@ var HomePage = React.createClass({
                </section>
 
                <section className="Contact" id="contact">
-
+                  <Contact source='wp-json/wp/v2/pages'/>
                </section>
             </div>
             {/*End of content*/}
@@ -73,12 +80,12 @@ var HomePage = React.createClass({
             <footer>
                <div className="menu-cont container">
                   <div className="copyright">
-                     <span>&copy;2016 Cameron Fuller</span>
+                     <span>&copy;2016 Cameron D. Fuller</span>
                   </div>
                   <div className="social">
-                     <a href="#"><i className="fa fa-facebook"></i></a>
-                     <a href="#"><i className="fa fa-instagram"></i></a>
-                     <a href="#"><i className="fa fa-twitter"></i></a>
+                     <a href="www.facebook.com/Franksjacket"><i className="fa fa-facebook"></i></a>
+                     <a href="www.instagram.com/franksjacket/"><i className="fa fa-instagram"></i></a>
+                     <a href="twitter.com/camerondfuller"><i className="fa fa-twitter"></i></a>
                   </div>
                </div>
             </footer>

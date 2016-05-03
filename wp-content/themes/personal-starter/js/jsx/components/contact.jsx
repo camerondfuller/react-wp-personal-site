@@ -1,14 +1,12 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
-import PageContent from './page-content.jsx';
+import ContactContent from './contact-content.jsx';
 
-
-
-var About = React.createClass({
+var Contact = React.createClass({
    getInitialState: function() {
       return {
-         pageObject:[],
-         arrayIndex:this.props.order
+         pageData:[],
+         arrayIndex:0
       };
    },
    componentWillMount: function() {
@@ -16,7 +14,7 @@ var About = React.createClass({
          var wpObject = result;
          console.log(wpObject);
          this.setState({
-            pageObject: wpObject,
+            pageData: wpObject,
          });
       }.bind(this));
    },
@@ -25,16 +23,13 @@ var About = React.createClass({
    },
    render: function() {
       return (
-         <div>
-            <div className="about-section container">
-               <PageContent object={this.state.pageObject} arrayIndex={this.state.arrayIndex}/>
-            </div>
+         <div className="container">
+            <div className="left-side-name contact-side-name"><span>Contact</span></div>
+            <ContactContent object={this.state.pageData} arrayIndex={this.state.arrayIndex} />
          </div>
       );
    }
+
 });
 
-module.exports = About;
-
-//PropTypes
-//mediaID = the json object for the featured image based on the post
+module.exports = Contact;

@@ -18,7 +18,7 @@ var PageContent = React.createClass({
      },
    render: function() {
       return (
-         <div>
+         <div className="container">
             <div>
                <h2>{this.state.pageTitle}</h2>
             </div>

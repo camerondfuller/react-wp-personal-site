@@ -890,6 +890,18 @@ object {
   .main-nav span:last-child {
     padding-right: 0; }
 
+.left-side-name {
+  position: absolute;
+  font-family: 'Ostrich', sans-serif;
+  font-size: 8rem;
+  letter-spacing: 20px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  left: -175px;
+  bottom: 200px;
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5); }
+
 /* Front page */
 .page-background {
   background-color: #EFEFEF; }
@@ -938,7 +950,12 @@ object {
 
 .About {
   height: 80vh;
-  background-color: #EFEFEF; }
+  background-color: #EFEFEF;
+  position: relative; }
+
+.about-border-name {
+  left: -75px;
+  bottom: 100px; }
 
 .about-section h2 {
   text-align: center; }
@@ -962,18 +979,6 @@ object {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center; }
-
-.left-side-name {
-  position: absolute;
-  font-family: 'Ostrich', sans-serif;
-  font-size: 8rem;
-  letter-spacing: 20px;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  left: -175px;
-  bottom: 200px;
-  -webkit-filter: brightness(0.5);
-          filter: brightness(0.5); }
 
 .portfolio-inner {
   height: 95%;
@@ -1015,7 +1020,7 @@ object {
 
 .double-column {
   width: 768px;
-  height: 90%;
+  height: 95%;
   margin: 0 auto;
   overflow: scroll; }
 
@@ -1023,7 +1028,7 @@ object {
   text-align: center; }
 
 .blog-image {
-  width: 25%; }
+  max-height: 300px; }
 
 .blog-content {
   padding: 1rem;
@@ -1056,7 +1061,7 @@ object {
 
 .Film {
   position: relative;
-  height: 80vh;
+  height: 95vh;
   background-color: #4E4548;
   color: #EFEFEF;
   display: -webkit-flex;
@@ -1075,8 +1080,13 @@ object {
   bottom: 50px; }
 
 .Contact {
-  height: 60vh;
-  background-color: #EFEFEF; }
+  height: 95vh;
+  background-color: #EFEFEF;
+  position: relative; }
+
+.contact-side-name {
+  left: -140px;
+  bottom: 165px; }
 
 footer {
   width: 100vw;
