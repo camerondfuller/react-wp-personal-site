@@ -1,27 +1,20 @@
 $(function() {
-   //Cache reference to window and animation items
-   var $animation_elements = $('.animation-element');
-   var $window = $(window);
-
    // Closes the sidebar menu
-   $('#menu-close').click(function(e) {
-      e.preventDefault();
+   $('#menu-close').click(function(event) {
+      event.preventDefault();
       $('#sidebar-wrapper').toggleClass('active');
    });
 
    // Opens the sidebar menu
-   $('#menu-toggle').click(function(e) {
-      e.preventDefault();
+   $('#menu-toggle').click(function(event) {
+      event.preventDefault();
       $('#sidebar-wrapper').toggleClass('active');
    });
 
    // Scrolls to the selected menu item on the page
    // Add smooth scrolling to all links
-   $("nav span a").on('click', function(event) {
-
-      // Prevent default anchor click behavior
-      // event.preventDefault();
-
+   $('nav span a').on('click', function(event) {
+      event.preventDefault();
       // Store hash
       var hash = this.hash;
 
@@ -37,27 +30,30 @@ $(function() {
    });
 
    //Beginning of Window Scroll Animation Function
-   function check_if_in_view() {
-      var window_height = $window.height();
-      var window_top_position = $window.scrollTop();
-      var window_bottom_position = (window_top_position + window_height);
+   //Cache reference to window and animation items
+   var $animationElements = $('.animation-element');
+   var $window = $(window);
+   function checkIfInView() {
+      var windowHeight = $window.height();
+      var windowTopPosition = $window.scrollTop();
+      var windowBottomPosition = (windowTopPosition + windowHeight);
 
-      $.each($animation_elements, function() {
+      $.each($animationElements, function() {
          var $element = $(this);
-         var element_height = $element.outerHeight();
-         var element_top_position = $element.offset().top;
-         var element_bottom_position = (element_top_position + element_height);
+         var elementHeight = $element.outerHeight();
+         var elementTopPosition = $element.offset().top;
+         var elementBottomPosition = (elementTopPosition + elementHeight);
 
          //check to see if this current container is within viewport
-         if ((element_bottom_position >= window_top_position) &&
-         (element_top_position <= window_bottom_position)) {
+         if ((elementBottomPosition >= windowTopPosition) &&
+         (elementTopPosition <= windowBottomPosition)) {
             $element.addClass('in-view');
          } else {
             $element.removeClass('in-view');
          }
       });
-   };
-   $window.on('scroll', check_if_in_view);
-   $window.on('scroll resize', check_if_in_view);
+   }
+   $window.on('scroll', checkIfInView);
+   $window.on('scroll resize', checkIfInView);
    $window.trigger('scroll');
 });

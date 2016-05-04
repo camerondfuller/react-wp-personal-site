@@ -48,7 +48,7 @@ var HomePage = React.createClass({
                   <About source='wp-json/wp/v2/pages?filter[orderby]=menu_order' order={6}/>
                </section>
 
-               <section className="Portfolio" id="portfolio">
+               <section className="Portfolio animation-element" id="portfolio">
                   <Portfolio source='wp-json/wp/v2/pages?filter[orderby]=menu_order' order={0} />
                </section>
 

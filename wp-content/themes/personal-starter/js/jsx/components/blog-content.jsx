@@ -19,6 +19,13 @@ var BlogContent = React.createClass({
          postImage:nextProps.object[this.state.arrayIndex].featured_image_url
       })
    },
+   componentDidUpdate: function(prevProps, prevState) {
+      this.setState({
+         postContent:this.props.object[this.state.arrayIndex].content.rendered,
+         postTitle:this.props.object[this.state.arrayIndex].title.rendered,
+         postImage:this.props.object[this.state.arrayIndex].featured_image_url
+      });
+   },
    imageClass: function() {
       if(this.state.postImage !== null) {
          return "blog-image";
