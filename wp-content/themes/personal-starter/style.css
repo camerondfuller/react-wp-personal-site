@@ -944,7 +944,8 @@ object {
   display: flex;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
-          justify-content: space-between; }
+          justify-content: space-between;
+  min-height: 80%; }
   .about-cont p {
     margin-top: 0; }
 
