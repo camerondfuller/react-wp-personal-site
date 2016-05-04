@@ -83,9 +83,9 @@ var HomePage = React.createClass({
                      <span>&copy;2016 Cameron D. Fuller</span>
                   </div>
                   <div className="social">
-                     <a href="www.facebook.com/Franksjacket" target="_blank"><i className="fa fa-facebook"></i></a>
-                     <a href="www.instagram.com/franksjacket/" target="_blank"><i className="fa fa-instagram"></i></a>
-                     <a href="twitter.com/camerondfuller" target="_blank"><i className="fa fa-twitter"></i></a>
+                     <a href="http://www.facebook.com/Franksjacket" target="_blank"><i className="fa fa-facebook"></i></a>
+                     <a href="http://www.instagram.com/franksjacket/" target="_blank"><i className="fa fa-instagram"></i></a>
+                     <a href="http://twitter.com/camerondfuller" target="_blank"><i className="fa fa-twitter"></i></a>
                   </div>
                </div>
             </footer>
