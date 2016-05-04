@@ -66,7 +66,7 @@ var HomePage = React.createClass({
                   <div className="container">
                      <h2>Marco Solo</h2>
                      <iframe src="https://player.vimeo.com/video/145091486" width="640" height="360" frameBorder="0" allowFullScreen></iframe>
-                     <p><a href="https://vimeo.com/145091486">Marco Solo - Episode 1 - Trish</a> from <a href="https://vimeo.com/marcosolo">Marco Solo: The Web Series</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+                     <p><a href="https://vimeo.com/145091486" target="_blank">Marco Solo - Episode 1 - Trish</a> from <a href="https://vimeo.com/marcosolo" target="_blank">Marco Solo: The Web Series</a> on <a href="https://vimeo.com" target="_blank">Vimeo</a>.</p>
                   </div>
                </section>
 
@@ -83,9 +83,9 @@ var HomePage = React.createClass({
                      <span>&copy;2016 Cameron D. Fuller</span>
                   </div>
                   <div className="social">
-                     <a href="www.facebook.com/Franksjacket"><i className="fa fa-facebook"></i></a>
-                     <a href="www.instagram.com/franksjacket/"><i className="fa fa-instagram"></i></a>
-                     <a href="twitter.com/camerondfuller"><i className="fa fa-twitter"></i></a>
+                     <a href="www.facebook.com/Franksjacket" target="_blank"><i className="fa fa-facebook"></i></a>
+                     <a href="www.instagram.com/franksjacket/" target="_blank"><i className="fa fa-instagram"></i></a>
+                     <a href="twitter.com/camerondfuller" target="_blank"><i className="fa fa-twitter"></i></a>
                   </div>
                </div>
             </footer>
