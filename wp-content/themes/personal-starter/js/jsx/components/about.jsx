@@ -25,10 +25,8 @@ var About = React.createClass({
    },
    render: function() {
       return (
-         <div>
-            <div className="about-section container">
-               <PageContent object={this.state.pageObject} arrayIndex={this.state.arrayIndex}/>
-            </div>
+         <div className="container">
+            <PageContent object={this.state.pageObject} arrayIndex={this.state.arrayIndex}/>
          </div>
       );
    }

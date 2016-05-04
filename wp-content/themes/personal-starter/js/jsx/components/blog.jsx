@@ -12,12 +12,12 @@ var BlogLoop = React.createClass({
    },
    componentWillMount: function() {
       this.serverRequest = $.get(this.props.source, function (result) {
-     var wpObject = result;
-     console.log(wpObject);
-     this.setState({
-      postData: wpObject,
-     });
-   }.bind(this));
+         var wpObject = result;
+         console.log(wpObject);
+         this.setState({
+            postData: wpObject,
+         });
+      }.bind(this));
    },
    componentWillUnmount: function() {
       this.serverRequest.abort();
@@ -30,13 +30,21 @@ var BlogLoop = React.createClass({
          this.setState({arrayIndex:this.state.arrayIndex + 1});
       }
    },
+   prevPost: function() {
+      if(this.state.arrayIndex!==0) {
+         this.setState({arrayIndex:this.state.arrayIndex - 1})
+      }
+   },
    render: function() {
       return (
          <div className="double-column container">
             <div className="single-column">
                <BlogContent object={this.state.postData} arrayIndex={this.state.arrayIndex} />
             </div>
-            <div className="next-class" onClick={this.nextPost}>Next Post<i className="fa fa-angle-double-right"></i></div>
+            <div className="blog-buttons">
+               <div className="next-class" onClick={this.nextPost}>Next Post <i className="fa fa-angle-double-right"></i></div>
+               <div className="prev-class" onClick={this.prevPost}><i className="fa fa-angle-double-left"></i> Previous Post</div>
+            </div>
          </div>
 
       );

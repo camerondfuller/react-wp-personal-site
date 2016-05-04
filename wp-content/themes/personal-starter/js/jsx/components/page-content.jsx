@@ -18,13 +18,13 @@ var PageContent = React.createClass({
      },
    render: function() {
       return (
-         <div className="container">
+         <div>
             <div>
-               <h2>{this.state.pageTitle}</h2>
+               <h2 dangerouslySetInnerHTML={{__html: this.state.pageTitle}}></h2>
             </div>
-            <div className="container">
+            <div className="about-cont">
                <img src={this.state.featuredImageURL} alt="a picture of Cameron Fuller" className="about-img"/>
-               <div dangerouslySetInnerHTML={{ __html: this.state.pageContent}}></div>
+               <div className="about-content" dangerouslySetInnerHTML={{ __html: this.state.pageContent}}></div>
             </div>
          </div>
       );

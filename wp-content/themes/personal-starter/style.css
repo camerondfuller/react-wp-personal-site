@@ -953,15 +953,24 @@ object {
   background-color: #EFEFEF;
   position: relative; }
 
+.about-cont {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .about-cont p {
+    margin-top: 0; }
+
+.about-content {
+  width: 67%; }
+
 .about-border-name {
   left: -75px;
   bottom: 100px; }
 
-.about-section h2 {
-  text-align: center; }
-
 .about-img {
-  float: left;
   width: 33%;
   padding-right: 1rem; }
 
@@ -1040,7 +1049,17 @@ object {
   font-size: 1.5rem;
   font-weight: bold;
   position: absolute;
+  left: 300px;
   bottom: 20px; }
+
+.prev-class {
+  color: #00CCD6;
+  font-family: "Ostrich", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+  bottom: 20px;
+  right: 300px; }
 
 .animate-blog {
   -webkit-animation: mobile-blog-slide-appear 2s;

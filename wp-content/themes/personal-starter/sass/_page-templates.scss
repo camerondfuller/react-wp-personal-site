@@ -84,17 +84,21 @@
    background-color: $color_off_white;
    position: relative;
 }
+.about-cont {
+   display: flex;
+   justify-content: space-between;
+   p {
+      margin-top: 0;
+   }
+}
+.about-content {
+   width: 67%;
+}
 .about-border-name {
    left: -75px;
    bottom: 100px;
 }
-.about-section {
-   h2 {
-      text-align: center;
-   }
-}
 .about-img {
-   float: left;
    width: 33%;
    padding-right: 1rem;
 }
@@ -163,7 +167,17 @@
    font-size: 1.5rem;
    font-weight: bold;
    position: absolute;
+   left:300px;
    bottom:20px;
+}
+.prev-class {
+   color: $color_blue;
+   font-family: "Ostrich", sans-serif;
+   font-size: 1.5rem;
+   font-weight: bold;
+   position: absolute;
+   bottom:20px;
+   right:300px;
 }
 .animate-blog {
    animation: mobile-blog-slide-appear 2s;
