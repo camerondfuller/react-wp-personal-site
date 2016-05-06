@@ -45,62 +45,19 @@
 	}
 }
 
-@keyframes mobile-blog-slide-appear {
+@keyframes slide-appear {
 	0% {
-		left:-1500px;
+		position: absolute;
 		opacity: 0;
-	}
-	70% {
-		left:1rem;
-	}
-	75% {
-		left: 1.1rem;
-	}
-	80% {
-		left: .9rem;
-	}
-	85% {
-		left: 1.1rem;
-	}
-	90% {
-		left: .9rem;
-	}
-	95% {
-		left: 1.1rem;
+		left:-100;
 	}
 	100% {
-		left: 1rem;
+		position: relative;
 		opacity: 1;
+		left:0;
 	}
 }
-@keyframes desktop-blog-slide-appear {
-	0% {
-		left:-1500px;
-		opacity: 0;
-	}
-	70% {
-		left:25%;
-	}
-	75% {
-		left: 25.5%;
-	}
-	80% {
-		left: 24.5%;
-	}
-	85% {
-		left: 25.5%;
-	}
-	90% {
-		left: 24.5%;
-	}
-	95% {
-		left: 25.5%;
-	}
-	100% {
-		left: 25%;
-		opacity: 1;
-	}
-}
+
 @keyframes down-arrow {
 	0% {
 		bottom:40px;

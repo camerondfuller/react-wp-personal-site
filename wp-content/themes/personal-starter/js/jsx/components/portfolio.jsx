@@ -23,7 +23,6 @@ var Portfolio = React.createClass({
    render: function() {
       return (
          <div>
-            <div className="left-side-name"><span>Portfolio</span></div>
             <div className="portfolio-inner container">
                <PortfolioContent object={this.state.pageData} arrayIndex={0}/>
                <PortfolioContent object={this.state.pageData} arrayIndex={1}/>

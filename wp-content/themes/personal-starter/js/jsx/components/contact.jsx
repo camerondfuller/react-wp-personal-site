@@ -24,7 +24,6 @@ var Contact = React.createClass({
    render: function() {
       return (
          <div className="container">
-            <div className="left-side-name contact-side-name"><span>Contact</span></div>
             <ContactContent object={this.state.pageData} arrayIndex={this.state.arrayIndex} />
          </div>
       );

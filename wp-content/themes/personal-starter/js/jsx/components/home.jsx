@@ -45,33 +45,49 @@ var HomePage = React.createClass({
                   <div className="left-side-name about-border-name">
                      <span>about</span>
                   </div>
-                  <About source='wp-json/wp/v2/pages?filter[orderby]=menu_order' order={6}/>
+                  <div className="animate-box">
+                     <About source='wp-json/wp/v2/pages?filter[orderby]=menu_order' order={6}/>
+                  </div>
                </section>
 
                <section className="Portfolio animation-element" id="portfolio">
-                  <Portfolio source='wp-json/wp/v2/pages?filter[orderby]=menu_order' order={0} />
+                  <div className="left-side-name">
+                     <span>Portfolio</span>
+                  </div>
+                  <div className="animate-box">
+                     <Portfolio source='wp-json/wp/v2/pages?filter[orderby]=menu_order' order={0} />
+                  </div>
                </section>
 
                <section className="Blog" id="blog">
                   <div className="left-side-name film-border-name">
                      <span>Blog</span>
                   </div>
-                  <BlogLoop source="/wp-json/wp/v2/posts"/>
+                  <div className="animate-box">
+                     <BlogLoop source="/wp-json/wp/v2/posts"/>
+                  </div>
                </section>
 
                <section className="Film" id="film">
                   <div className="left-side-name film-border-name">
                      <span>Film</span>
                   </div>
-                  <div className="container">
-                     <h2>Marco Solo</h2>
-                     <iframe src="https://player.vimeo.com/video/145091486" width="640" height="360" frameBorder="0" allowFullScreen></iframe>
-                     <p><a href="https://vimeo.com/145091486" target="_blank">Marco Solo - Episode 1 - Trish</a> from <a href="https://vimeo.com/marcosolo" target="_blank">Marco Solo: The Web Series</a> on <a href="https://vimeo.com" target="_blank">Vimeo</a>.</p>
+                  <div className="animate-box">
+                     <div className="container">
+                        <h2>Marco Solo</h2>
+                        <iframe src="https://player.vimeo.com/video/145091486" width="640" height="360" frameBorder="0" allowFullScreen></iframe>
+                        <p><a href="https://vimeo.com/145091486" target="_blank">Marco Solo - Episode 1 - Trish</a> from <a href="https://vimeo.com/marcosolo" target="_blank">Marco Solo: The Web Series</a> on <a href="https://vimeo.com" target="_blank">Vimeo</a>.</p>
+                     </div>
                   </div>
                </section>
 
                <section className="Contact" id="contact">
-                  <Contact source='wp-json/wp/v2/pages'/>
+                  <div className="left-side-name contact-side-name">
+                     <span>Contact</span>
+                  </div>
+                  <div className="animate-box">
+                     <Contact source='wp-json/wp/v2/pages'/>
+                  </div>
                </section>
             </div>
             {/*End of content*/}

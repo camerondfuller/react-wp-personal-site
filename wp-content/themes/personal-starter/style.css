@@ -66,85 +66,25 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   100% {
     height: 10vh; } }
 
-@-webkit-keyframes mobile-blog-slide-appear {
+@-webkit-keyframes slide-appear {
   0% {
-    left: -1500px;
-    opacity: 0; }
-  70% {
-    left: 1rem; }
-  75% {
-    left: 1.1rem; }
-  80% {
-    left: .9rem; }
-  85% {
-    left: 1.1rem; }
-  90% {
-    left: .9rem; }
-  95% {
-    left: 1.1rem; }
+    position: absolute;
+    opacity: 0;
+    left: -100; }
   100% {
-    left: 1rem;
-    opacity: 1; } }
+    position: relative;
+    opacity: 1;
+    left: 0; } }
 
-@keyframes mobile-blog-slide-appear {
+@keyframes slide-appear {
   0% {
-    left: -1500px;
-    opacity: 0; }
-  70% {
-    left: 1rem; }
-  75% {
-    left: 1.1rem; }
-  80% {
-    left: .9rem; }
-  85% {
-    left: 1.1rem; }
-  90% {
-    left: .9rem; }
-  95% {
-    left: 1.1rem; }
+    position: absolute;
+    opacity: 0;
+    left: -100; }
   100% {
-    left: 1rem;
-    opacity: 1; } }
-
-@-webkit-keyframes desktop-blog-slide-appear {
-  0% {
-    left: -1500px;
-    opacity: 0; }
-  70% {
-    left: 25%; }
-  75% {
-    left: 25.5%; }
-  80% {
-    left: 24.5%; }
-  85% {
-    left: 25.5%; }
-  90% {
-    left: 24.5%; }
-  95% {
-    left: 25.5%; }
-  100% {
-    left: 25%;
-    opacity: 1; } }
-
-@keyframes desktop-blog-slide-appear {
-  0% {
-    left: -1500px;
-    opacity: 0; }
-  70% {
-    left: 25%; }
-  75% {
-    left: 25.5%; }
-  80% {
-    left: 24.5%; }
-  85% {
-    left: 25.5%; }
-  90% {
-    left: 24.5%; }
-  95% {
-    left: 25.5%; }
-  100% {
-    left: 25%;
-    opacity: 1; } }
+    position: relative;
+    opacity: 1;
+    left: 0; } }
 
 @-webkit-keyframes down-arrow {
   0% {
@@ -866,8 +806,6 @@ object {
 --------------------------------------------------------------*/
 .header {
   width: 100vw;
-  height: 10vh;
-  background-color: transparent;
   color: #EFEFEF;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -880,14 +818,16 @@ object {
   font-family: 'Ostrich', sans-serif;
   position: fixed;
   z-index: 50;
-  -webkit-animation: header-grow 0.3s;
-          animation: header-grow 0.3s; }
-
-.header-transition {
   height: 6vh;
   background-color: #4E4548;
   -webkit-animation: header-shrink 0.3s;
           animation: header-shrink 0.3s; }
+
+.header-transition {
+  height: 10vh;
+  background-color: transparent;
+  -webkit-animation: header-grow 0.3s;
+          animation: header-grow 0.3s; }
 
 .title {
   color: #EFEFEF; }
@@ -921,6 +861,9 @@ object {
           filter: brightness(0.5); }
 
 /* Front page */
+.animate-box {
+  opacity: 0; }
+
 .page-background {
   background-color: #EFEFEF; }
 
@@ -969,7 +912,8 @@ object {
 .About {
   height: 80vh;
   background-color: #EFEFEF;
-  position: relative; }
+  position: relative;
+  opacity: 1; }
 
 .about-cont {
   display: -webkit-flex;
@@ -1164,3 +1108,8 @@ footer {
 
 section {
   padding: 4rem; }
+
+.slide-in-left {
+  -webkit-animation: slide-appear 1.5s ease;
+          animation: slide-appear 1.5s ease;
+  opacity: 1; }

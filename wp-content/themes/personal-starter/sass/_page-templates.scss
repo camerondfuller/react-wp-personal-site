@@ -4,8 +4,6 @@
 // Header
 .header {
    width: 100vw;
-   height:10vh;
-   background-color: transparent;
    color:$color_off_white;
    display: flex;
    align-items: center;
@@ -14,12 +12,14 @@
    font-family: 'Ostrich', sans-serif;
    position: fixed;
    z-index: 50;
-   animation: header-grow 0.3s;
-}
-.header-transition {
    height:6vh;
    background-color: $color_gray;
    animation: header-shrink 0.3s;
+}
+.header-transition {
+   height:10vh;
+   background-color: transparent;
+   animation: header-grow 0.3s;
 }
 .title {
    color:$color_off_white;
@@ -52,6 +52,9 @@
 }
 
 /* Front page */
+.animate-box {
+   opacity: 0;
+}
 .page-background {
    background-color: $color_off_white;
 }
@@ -94,6 +97,7 @@
    height:80vh;
    background-color: $color_off_white;
    position: relative;
+   opacity: 1;
 }
 .about-cont {
    display: flex;
@@ -261,4 +265,8 @@ footer {
 }
 section {
    padding: 4rem;
+}
+.slide-in-left {
+   animation: slide-appear 1.5s ease;
+   opacity: 1;
 }

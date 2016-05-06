@@ -29,41 +29,48 @@ $(function() {
       });
    });
 
-   //Beginning of Window Scroll Animation Function
-   //Cache reference to window and animation items
-   var $animationElements = $('.animation-element');
-   var $window = $(window);
-   function checkIfInView() {
-      var windowHeight = $window.height();
-      var windowTopPosition = $window.scrollTop();
-      var windowBottomPosition = (windowTopPosition + windowHeight);
+   //    //Beginning of Window Scroll Animation Function
+   //    //Cache reference to window and animation items
+   //    var $animationElements = $('.animation-element');
+   //    var $window = $(window);
+   //    function checkIfInView() {
+   //       var windowHeight = $window.height();
+   //       var windowTopPosition = $window.scrollTop();
+   //       var windowBottomPosition = (windowTopPosition + windowHeight);
+   //
+   //       $.each($animationElements, function() {
+   //          var $element = $(this);
+   //          var elementHeight = $element.outerHeight();
+   //          var elementTopPosition = $element.offset().top;
+   //          var elementBottomPosition = (elementTopPosition + elementHeight);
+   //
+   //          //check to see if this current container is within viewport
+   //          if ((elementBottomPosition >= windowTopPosition) &&
+   //          (elementTopPosition <= windowBottomPosition)) {
+   //             $element.addClass('in-view');
+   //          } else {
+   //             $element.removeClass('in-view');
+   //          }
+   //       });
+   //    }
+   //    $window.on('scroll', checkIfInView);
+   //    $window.on('scroll resize', checkIfInView);
+   //    $window.trigger('scroll');
+   // });
 
-      $.each($animationElements, function() {
-         var $element = $(this);
-         var elementHeight = $element.outerHeight();
-         var elementTopPosition = $element.offset().top;
-         var elementBottomPosition = (elementTopPosition + elementHeight);
-
-         //check to see if this current container is within viewport
-         if ((elementBottomPosition >= windowTopPosition) &&
-         (elementTopPosition <= windowBottomPosition)) {
-            $element.addClass('in-view');
-         } else {
-            $element.removeClass('in-view');
-         }
-      });
-   }
-   $window.on('scroll', checkIfInView);
-   $window.on('scroll resize', checkIfInView);
-   $window.trigger('scroll');
-});
-$(window).scroll(function() {
-  if ($(this).scrollTop() > 710 && $('div').hasClass('home')){
-    $('header').addClass('header-transition');
-    // $('section.hero-target').removeClass('hero-banner');
-  }
-  else if ($(this).scrollTop() > -1 && $('div').hasClass('home')) {
-    $('header').removeClass('header-transition');
-    // $('section.hero-target').addClass('hero-banner');
-  }
+   //Animate Section content
+   $(window).scroll(function() {
+      if ($(this).scrollTop() > 250 && $('div').hasClass('home')){
+         $('div.animate-box').addClass('slide-in-left');
+      }
+   });
+   //Shrink header as it reaches sections
+   $(window).scroll(function() {
+      if ($(this).scrollTop() > 710 && $('div').hasClass('home')){
+         $('header').removeClass('header-transition');
+      }
+      else if ($(this).scrollTop() > -1 && $('div').hasClass('home')) {
+         $('header').addClass('header-transition');
+      }
+   });
 });
