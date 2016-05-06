@@ -59,11 +59,11 @@ $(function() {
 });
 $(window).scroll(function() {
   if ($(this).scrollTop() > 710 && $('div').hasClass('home')){
-    $('header').removeClass('header-transition');
+    $('header').addClass('header-transition');
     // $('section.hero-target').removeClass('hero-banner');
   }
   else if ($(this).scrollTop() > -1 && $('div').hasClass('home')) {
-    $('header').addClass('header-transition');
+    $('header').removeClass('header-transition');
     // $('section.hero-target').addClass('hero-banner');
   }
 });

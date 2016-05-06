@@ -4,8 +4,8 @@
 // Header
 .header {
    width: 100vw;
-   height:8vh;
-   background-color: $color_gray;
+   height:10vh;
+   background-color: transparent;
    color:$color_off_white;
    display: flex;
    align-items: center;
@@ -14,10 +14,15 @@
    font-family: 'Ostrich', sans-serif;
    position: fixed;
    z-index: 50;
+   animation: header-grow 0.3s;
 }
 .header-transition {
-   height:10vh;
-   background-color: transparent;
+   height:6vh;
+   background-color: $color_gray;
+   animation: header-shrink 0.3s;
+}
+.title {
+   color:$color_off_white;
 }
 .menu-cont {
    display: flex;

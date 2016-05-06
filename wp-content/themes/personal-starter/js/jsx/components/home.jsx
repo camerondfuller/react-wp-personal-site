@@ -15,7 +15,7 @@ var HomePage = React.createClass({
             <header className="header header-transition">
                <div className="menu-cont container">
                   <div className="name-branding">
-                     <a href="#top"><span>Cameron D. Fuller</span></a>
+                     <a href="#top"><span className="title">Cameron D. Fuller</span></a>
                   </div>
                   <nav className="main-nav">
                      <span><a href="#about">About</a></span>

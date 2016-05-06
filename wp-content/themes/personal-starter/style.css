@@ -43,6 +43,29 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Page Templates
 	## Front page
 --------------------------------------------------------------*/
+@-webkit-keyframes header-shrink {
+  0% {
+    height: 10vh; }
+  100% {
+    height: 6vh; } }
+@keyframes header-shrink {
+  0% {
+    height: 10vh; }
+  100% {
+    height: 6vh; } }
+
+@-webkit-keyframes header-grow {
+  0% {
+    height: 6vh; }
+  100% {
+    height: 10vh; } }
+
+@keyframes header-grow {
+  0% {
+    height: 6vh; }
+  100% {
+    height: 10vh; } }
+
 @-webkit-keyframes mobile-blog-slide-appear {
   0% {
     left: -1500px;
@@ -62,6 +85,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   100% {
     left: 1rem;
     opacity: 1; } }
+
 @keyframes mobile-blog-slide-appear {
   0% {
     left: -1500px;
@@ -842,8 +866,8 @@ object {
 --------------------------------------------------------------*/
 .header {
   width: 100vw;
-  height: 8vh;
-  background-color: #4E4548;
+  height: 10vh;
+  background-color: transparent;
   color: #EFEFEF;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -855,11 +879,18 @@ object {
   letter-spacing: 5px;
   font-family: 'Ostrich', sans-serif;
   position: fixed;
-  z-index: 50; }
+  z-index: 50;
+  -webkit-animation: header-grow 0.3s;
+          animation: header-grow 0.3s; }
 
 .header-transition {
-  height: 10vh;
-  background-color: transparent; }
+  height: 6vh;
+  background-color: #4E4548;
+  -webkit-animation: header-shrink 0.3s;
+          animation: header-shrink 0.3s; }
+
+.title {
+  color: #EFEFEF; }
 
 .menu-cont {
   display: -webkit-flex;
