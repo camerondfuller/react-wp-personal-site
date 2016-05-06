@@ -9,9 +9,9 @@
    color:$color_off_white;
    display: flex;
    align-items: center;
-   font-size: 1.5rem;
+   font-size: 2rem;
    letter-spacing: 5px;
-   font-family: 'Ostrich';
+   font-family: 'Ostrich', sans-serif;
 }
 
 .menu-cont {
@@ -19,7 +19,7 @@
    justify-content: space-between;
 }
 .name-branding {
-   font-family: 'Lobster';
+   font-family: 'Ostrich', sans-serif;
 }
 .main-nav {
 
@@ -58,7 +58,7 @@
    color: #fff;
    text-align: center;
    span {
-      font-family: 'Ostrich', serif;
+      font-family: 'Ostrich', sans-serif;
       letter-spacing: 10px;
       @include desktop {
          font-size: 4rem;
@@ -101,7 +101,8 @@
    bottom: 100px;
 }
 .about-img {
-   width: 33%;
+   width: 327px;
+   height: 450px;
    padding-right: 1rem;
 }
 
