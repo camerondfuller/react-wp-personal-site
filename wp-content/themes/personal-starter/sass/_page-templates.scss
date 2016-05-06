@@ -52,7 +52,11 @@
 }
 
 /* Front page */
-.animate-box {
+.animate-box-1,
+.animate-box-2,
+.animate-box-3,
+.animate-box-4,
+.animate-box-5 {
    opacity: 0;
 }
 .page-background {
@@ -267,6 +271,10 @@ section {
    padding: 4rem;
 }
 .slide-in-left {
-   animation: slide-appear 1.5s ease;
+   animation: slide-appear-left 1.5s ease;
+   opacity: 1;
+}
+.slide-in-right {
+   animation: slide-appear-right 1.5s ease;
    opacity: 1;
 }

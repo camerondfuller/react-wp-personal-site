@@ -61,7 +61,27 @@ $(function() {
    //Animate Section content
    $(window).scroll(function() {
       if ($(this).scrollTop() > 250 && $('div').hasClass('home')){
-         $('div.animate-box').addClass('slide-in-left');
+         $('div.animate-box-1').addClass('slide-in-left');
+      }
+   });
+   $(window).scroll(function() {
+      if ($(this).scrollTop() > 800 && $('div').hasClass('home')){
+         $('div.animate-box-2').addClass('slide-in-right');
+      }
+   });
+   $(window).scroll(function() {
+      if ($(this).scrollTop() > 1500 && $('div').hasClass('home')){
+         $('div.animate-box-3').addClass('slide-in-left');
+      }
+   });
+   $(window).scroll(function() {
+      if ($(this).scrollTop() > 2200 && $('div').hasClass('home')){
+         $('div.animate-box-4').addClass('slide-in-right');
+      }
+   });
+   $(window).scroll(function() {
+      if ($(this).scrollTop() > 3000 && $('div').hasClass('home')){
+         $('div.animate-box-5').addClass('slide-in-left');
       }
    });
    //Shrink header as it reaches sections

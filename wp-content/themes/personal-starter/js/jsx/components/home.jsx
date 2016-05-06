@@ -45,7 +45,7 @@ var HomePage = React.createClass({
                   <div className="left-side-name about-border-name">
                      <span>about</span>
                   </div>
-                  <div className="animate-box">
+                  <div className="animate-box-1">
                      <About source='wp-json/wp/v2/pages?filter[orderby]=menu_order' order={6}/>
                   </div>
                </section>
@@ -54,7 +54,7 @@ var HomePage = React.createClass({
                   <div className="left-side-name">
                      <span>Portfolio</span>
                   </div>
-                  <div className="animate-box">
+                  <div className="animate-box-2">
                      <Portfolio source='wp-json/wp/v2/pages?filter[orderby]=menu_order' order={0} />
                   </div>
                </section>
@@ -63,7 +63,7 @@ var HomePage = React.createClass({
                   <div className="left-side-name film-border-name">
                      <span>Blog</span>
                   </div>
-                  <div className="animate-box container">
+                  <div className="animate-box-3 container">
                      <BlogLoop source="/wp-json/wp/v2/posts"/>
                   </div>
                </section>
@@ -72,7 +72,7 @@ var HomePage = React.createClass({
                   <div className="left-side-name film-border-name">
                      <span>Film</span>
                   </div>
-                  <div className="animate-box">
+                  <div className="animate-box-4">
                      <div className="container">
                         <h2>Marco Solo</h2>
                         <iframe src="https://player.vimeo.com/video/145091486" width="640" height="360" frameBorder="0" allowFullScreen></iframe>
@@ -85,7 +85,7 @@ var HomePage = React.createClass({
                   <div className="left-side-name contact-side-name">
                      <span>Contact</span>
                   </div>
-                  <div className="animate-box">
+                  <div className="animate-box-5">
                      <Contact source='wp-json/wp/v2/pages'/>
                   </div>
                </section>

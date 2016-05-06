@@ -45,7 +45,7 @@
 	}
 }
 
-@keyframes slide-appear {
+@keyframes slide-appear-left {
 	0% {
 		position: absolute;
 		opacity: 0;
@@ -57,7 +57,18 @@
 		left:0;
 	}
 }
-
+@keyframes slide-appear-right {
+	0% {
+		position: absolute;
+		opacity: 0;
+		right:-100;
+	}
+	100% {
+		position: relative;
+		opacity: 1;
+		right:0;
+	}
+}
 @keyframes down-arrow {
 	0% {
 		bottom:40px;
