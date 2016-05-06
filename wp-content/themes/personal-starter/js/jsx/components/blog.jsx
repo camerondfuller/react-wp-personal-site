@@ -37,7 +37,7 @@ var BlogLoop = React.createClass({
    },
    render: function() {
       return (
-         <div className="double-column container">
+         <div className="double-column">
             <div className="single-column">
                <BlogContent object={this.state.postData} arrayIndex={this.state.arrayIndex} />
             </div>

@@ -63,7 +63,7 @@ var HomePage = React.createClass({
                   <div className="left-side-name film-border-name">
                      <span>Blog</span>
                   </div>
-                  <div className="animate-box">
+                  <div className="animate-box container">
                      <BlogLoop source="/wp-json/wp/v2/posts"/>
                   </div>
                </section>
