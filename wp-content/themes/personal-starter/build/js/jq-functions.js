@@ -13,7 +13,7 @@ $(function() {
 
    // Scrolls to the selected menu item on the page
    // Add smooth scrolling to all links
-   $('nav span a').on('click', function(event) {
+   $('header a').on('click', function(event) {
       event.preventDefault();
       // Store hash
       var hash = this.hash;
@@ -56,4 +56,14 @@ $(function() {
    $window.on('scroll', checkIfInView);
    $window.on('scroll resize', checkIfInView);
    $window.trigger('scroll');
+});
+$(window).scroll(function() {
+  if ($(this).scrollTop() > 710 && $('div').hasClass('home')){
+    $('header').removeClass('header-transition');
+    // $('section.hero-target').removeClass('hero-banner');
+  }
+  else if ($(this).scrollTop() > -1 && $('div').hasClass('home')) {
+    $('header').addClass('header-transition');
+    // $('section.hero-target').addClass('hero-banner');
+  }
 });

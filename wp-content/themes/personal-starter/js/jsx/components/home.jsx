@@ -10,12 +10,12 @@ var HomePage = React.createClass({
 
    render: function() {
       return (
-         <div>
+         <div className="home">
             {/*Beginning of header*/}
-            <header className="header">
+            <header className="header header-transition">
                <div className="menu-cont container">
                   <div className="name-branding">
-                     <span>Cameron D. Fuller</span>
+                     <a href="#top"><span>Cameron D. Fuller</span></a>
                   </div>
                   <nav className="main-nav">
                      <span><a href="#about">About</a></span>
@@ -29,7 +29,7 @@ var HomePage = React.createClass({
             {/*end of header */}
 
             {/*Beginning of body*/}
-            <div className="page-background">
+            <div className="page-background" id="top">
 
                <section className="hero-banner">
                   <div className="down-arrow">

@@ -589,14 +589,10 @@ textarea {
 /* Links */
 a {
   color: #FFD900;
-  -webkit-filter: brightness(0.75);
-          filter: brightness(0.75);
   text-decoration: none; }
   a:visited {
     color: #FFD900; }
   a:hover, a:focus, a:active {
-    -webkit-filter: brightness(1);
-            filter: brightness(1);
     text-decoration: underline; }
   a:focus {
     outline: none; }
@@ -846,7 +842,7 @@ object {
 --------------------------------------------------------------*/
 .header {
   width: 100vw;
-  height: 10vh;
+  height: 8vh;
   background-color: #4E4548;
   color: #EFEFEF;
   display: -webkit-flex;
@@ -857,7 +853,13 @@ object {
           align-items: center;
   font-size: 2rem;
   letter-spacing: 5px;
-  font-family: 'Ostrich', sans-serif; }
+  font-family: 'Ostrich', sans-serif;
+  position: fixed;
+  z-index: 50; }
+
+.header-transition {
+  height: 10vh;
+  background-color: transparent; }
 
 .menu-cont {
   display: -webkit-flex;
@@ -895,7 +897,7 @@ object {
   position: relative; }
   @media (min-width: 1000px) {
     .hero-banner {
-      height: 90vh;
+      height: 100vh;
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%), url("../assets/fixed-images/new-york-skyline.jpg") no-repeat center;
       background-size: cover;
       display: -webkit-flex;
@@ -1128,3 +1130,6 @@ footer {
   color: #EFEFEF;
   width: 100vw;
   height: 15vh; }
+
+section {
+  padding: 4rem; }
