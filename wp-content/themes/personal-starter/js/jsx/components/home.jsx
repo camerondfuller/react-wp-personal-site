@@ -7,7 +7,11 @@ import Portfolio from './portfolio.jsx';
 import Contact from './contact.jsx';
 
 var HomePage = React.createClass({
-
+   showSidebar: (param) => {
+      if(window.innerWidth >= 1275) {
+         return param
+      }
+   },
    render: function() {
       return (
          <div className="home">
@@ -15,7 +19,8 @@ var HomePage = React.createClass({
             <header className="header header-transition">
                <div className="menu-cont container">
                   <div className="name-branding">
-                     <a href="#top"><span className="title">Cameron D. Fuller</span></a>
+                     <img src="./wp-content/themes/personal-starter/build/assets/fixed-images/cdf-logo-yellow-large.png" alt="the cdf logo" className="logo"/>
+                     <a href="#top"><span className="title"> Cameron D. Fuller</span></a>
                   </div>
                   <nav className="main-nav">
                      <span><a href="#about">About</a></span>
@@ -42,36 +47,42 @@ var HomePage = React.createClass({
                </section>
 
                <section className="About" id="about">
-                  <div className="left-side-name about-border-name">
+                  {this.showSidebar(<div className="left-side-name about-border-name">
                      <span>about</span>
-                  </div>
+                  </div>)}
                   <div className="animate-box-1">
                      <About source='wp-json/wp/v2/pages?filter[orderby]=menu_order' order={6}/>
                   </div>
                </section>
 
                <section className="Portfolio animation-element" id="portfolio">
-                  <div className="left-side-name">
-                     <span>Portfolio</span>
-                  </div>
+                  {this.showSidebar(
+                     <div className="left-side-name">
+                        <span>Portfolio</span>
+                     </div>
+                  )}
                   <div className="animate-box-2">
                      <Portfolio source='wp-json/wp/v2/pages?filter[orderby]=menu_order' order={0} />
                   </div>
                </section>
 
                <section className="Blog" id="blog">
-                  <div className="left-side-name film-border-name">
-                     <span>Blog</span>
-                  </div>
+                  {this.showSidebar(
+                     <div className="left-side-name film-border-name">
+                        <span>Blog</span>
+                     </div>
+                  )}
                   <div className="animate-box-3 container">
                      <BlogLoop source="/wp-json/wp/v2/posts"/>
                   </div>
                </section>
 
                <section className="Film" id="film">
-                  <div className="left-side-name film-border-name">
-                     <span>Film</span>
-                  </div>
+                  {this.showSidebar(
+                     <div className="left-side-name film-border-name">
+                        <span>Film</span>
+                     </div>
+                  )}
                   <div className="animate-box-4">
                      <div className="container">
                         <h2>Marco Solo</h2>
@@ -82,9 +93,11 @@ var HomePage = React.createClass({
                </section>
 
                <section className="Contact" id="contact">
-                  <div className="left-side-name contact-side-name">
-                     <span>Contact</span>
-                  </div>
+                  {this.showSidebar(
+                     <div className="left-side-name contact-side-name">
+                        <span>Contact</span>
+                     </div>
+                  )}
                   <div className="animate-box-5">
                      <Contact source='wp-json/wp/v2/pages'/>
                   </div>

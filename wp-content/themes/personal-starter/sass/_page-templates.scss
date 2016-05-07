@@ -21,6 +21,9 @@
    background-color: transparent;
    animation: header-grow 0.3s;
 }
+.logo {
+   height:1.4rem;
+}
 .title {
    color:$color_off_white;
 }
@@ -48,7 +51,6 @@
    transform: rotate(-90deg);
    left:-175px;
    bottom: 200px;
-   filter: brightness(0.5);
 }
 
 /* Front page */
