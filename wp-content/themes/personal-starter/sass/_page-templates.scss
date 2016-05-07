@@ -12,9 +12,12 @@
    font-family: 'Ostrich', sans-serif;
    position: fixed;
    z-index: 50;
-   height:6vh;
    background-color: $color_gray;
    animation: header-shrink 0.3s;
+   height:3vh;
+   @include desktop {
+      height:6vh;
+   };
 }
 .header-transition {
    height:10vh;
@@ -66,11 +69,11 @@
 }
 .hero-banner {
    position: relative;
+   height:100vh;
+   background: linear-gradient( to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.15) 100%), url('../assets/fixed-images/new-york-skyline.jpg') no-repeat center;
+   background-size: cover;
+   @include center-text;
    @include desktop {
-      height:100vh;
-      background: linear-gradient( to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.15) 100%), url('../assets/fixed-images/new-york-skyline.jpg') no-repeat center;
-      background-size: cover;
-      @include center-text;
    };
 }
 .banner-middle-text {
@@ -79,16 +82,12 @@
    span {
       font-family: 'Ostrich', sans-serif;
       letter-spacing: 10px;
-      @include desktop {
-         font-size: 4rem;
-      };
+      font-size: 4rem;
    }
    p {
       font-family: 'Open Sans', sans-serif;
       text-transform: uppercase;
-      @include desktop {
-         font-size: 1.5rem;
-      };
+      font-size: 1.5rem;
    }
 }
 .down-arrow {
@@ -105,36 +104,56 @@
    position: relative;
    opacity: 1;
 }
+.about-title {
+   h2 {
+      font-size: 4rem;
+   }
+}
 .about-cont {
    display: flex;
    justify-content: space-between;
    min-height: 80%;
    p {
       margin-top: 0;
+      font-size: 2rem;
+      @include desktop {
+         font-size: 1rem;
+      };
    }
 }
 .about-content {
-   width: 67%;
+   @include desktop {
+      width: 67%;
+   };
 }
 .about-border-name {
    left: -75px;
    bottom: 100px;
 }
 .about-img {
-   width: 327px;
-   height: 450px;
-   padding-right: 1rem;
+   display: none;
+   @include desktop {
+      display: block;
+      width: 327px;
+      height: 450px;
+      padding-right: 1rem;
+   }
 }
 
 //Portfolio
 .Portfolio {
-   height:95vh;
    background-color: $color_gray;
    position: relative;
    color:$color_off_white;
    display: flex;
    align-items: center;
    justify-content: center;
+   @include desktop {
+      height: 150vh;
+   };
+   @include desktop-large {
+      height: 90vh;
+   };
 }
 .portfolio-inner {
    height: 95%;
@@ -142,8 +161,13 @@
    flex-wrap: wrap;
 }
 .port-cont-single {
-   width: 33%;
    text-align: center;
+   @include tablet {
+      width: 50%;
+   };
+   @include desktop-large {
+      width: 33%;
+   };
 }
 .port-title {
    text-align: center;

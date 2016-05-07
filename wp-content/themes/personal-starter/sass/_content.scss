@@ -50,5 +50,7 @@
 
 .container {
 	margin: 0 auto;
-	width: 1024px;
+	@include desktop-large {
+		width: 1024px;
+	};
 }

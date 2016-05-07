@@ -25,7 +25,11 @@
       @content;
    }
 }
-
+@mixin desktop-large {
+	@media (min-width: 1275px) {
+		@content;
+	}
+}
 
 //Keyframe Animations
 @keyframes header-shrink {
@@ -33,7 +37,10 @@
 		height:10vh;
 	}
 	100% {
-		height: 6vh;
+		height: 3vh;
+		@include desktop {
+			height: 6vh;			
+		};
 	}
 }
 @keyframes header-grow {

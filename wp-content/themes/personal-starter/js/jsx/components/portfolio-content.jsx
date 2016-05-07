@@ -6,14 +6,16 @@ var PageContent = React.createClass({
       return {
          pageTitle:'',
          pageContent:'',
-         featuredImageURL:''
+         featuredImageURL:'',
+         pageLink:false
       };
    },
    componentWillReceiveProps: function(nextProps) {
          this.setState({
            pageTitle: nextProps.object[nextProps.arrayIndex].title.rendered,
            pageContent:nextProps.object[nextProps.arrayIndex].content.rendered,
-           featuredImageURL:nextProps.object[nextProps.arrayIndex].featured_image_url
+           featuredImageURL:nextProps.object[nextProps.arrayIndex].featured_image_url,
+           pageLink:nextProps.object[nextProps.arrayIndex].acf.page_link
          });
      },
    render: function() {
@@ -24,7 +26,7 @@ var PageContent = React.createClass({
             </div>
             <div>
                <div className="port-text" dangerouslySetInnerHTML={{ __html: this.state.pageContent}}></div>
-               <img src={this.state.featuredImageURL} className="port-img"/>
+               <a href={this.state.pageLink}><img src={this.state.featuredImageURL} className="port-img"/></a>
             </div>
          </div>
       );

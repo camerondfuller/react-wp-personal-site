@@ -47,12 +47,16 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   0% {
     height: 10vh; }
   100% {
-    height: 6vh; } }
+    height: 3vh;
+    @media (min-width: 1000px) {
+      height: 6vh; } } }
 @keyframes header-shrink {
   0% {
     height: 10vh; }
   100% {
-    height: 6vh; } }
+    height: 3vh;
+    @media (min-width: 1000px) {
+      height: 6vh; } } }
 
 @-webkit-keyframes header-grow {
   0% {
@@ -764,8 +768,10 @@ a {
   display: block; }
 
 .container {
-  margin: 0 auto;
-  width: 1024px; }
+  margin: 0 auto; }
+  @media (min-width: 1275px) {
+    .container {
+      width: 1024px; } }
 
 /*--------------------------------------------------------------
 # Media
@@ -844,10 +850,13 @@ object {
   font-family: 'Ostrich', sans-serif;
   position: fixed;
   z-index: 50;
-  height: 6vh;
   background-color: #4E4548;
   -webkit-animation: header-shrink 0.3s;
-          animation: header-shrink 0.3s; }
+          animation: header-shrink 0.3s;
+  height: 3vh; }
+  @media (min-width: 1000px) {
+    .header {
+      height: 6vh; } }
 
 .header-transition {
   height: 10vh;
@@ -899,37 +908,31 @@ object {
   background-color: #EFEFEF; }
 
 .hero-banner {
-  position: relative; }
-  @media (min-width: 1000px) {
-    .hero-banner {
-      height: 100vh;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%), url("../assets/fixed-images/new-york-skyline.jpg") no-repeat center;
-      background-size: cover;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-justify-content: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      -webkit-align-items: center;
-          -ms-flex-align: center;
-              align-items: center; } }
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%), url("../assets/fixed-images/new-york-skyline.jpg") no-repeat center;
+  background-size: cover;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
 .banner-middle-text {
   color: #fff;
   text-align: center; }
   .banner-middle-text span {
     font-family: 'Ostrich', sans-serif;
-    letter-spacing: 10px; }
-    @media (min-width: 1000px) {
-      .banner-middle-text span {
-        font-size: 4rem; } }
+    letter-spacing: 10px;
+    font-size: 4rem; }
   .banner-middle-text p {
     font-family: 'Open Sans', sans-serif;
-    text-transform: uppercase; }
-    @media (min-width: 1000px) {
-      .banner-middle-text p {
-        font-size: 1.5rem; } }
+    text-transform: uppercase;
+    font-size: 1.5rem; }
 
 .down-arrow {
   position: absolute;
@@ -946,6 +949,9 @@ object {
   position: relative;
   opacity: 1; }
 
+.about-title h2 {
+  font-size: 4rem; }
+
 .about-cont {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -955,22 +961,30 @@ object {
           justify-content: space-between;
   min-height: 80%; }
   .about-cont p {
-    margin-top: 0; }
+    margin-top: 0;
+    font-size: 2rem; }
+    @media (min-width: 1000px) {
+      .about-cont p {
+        font-size: 1rem; } }
 
-.about-content {
-  width: 67%; }
+@media (min-width: 1000px) {
+  .about-content {
+    width: 67%; } }
 
 .about-border-name {
   left: -75px;
   bottom: 100px; }
 
 .about-img {
-  width: 327px;
-  height: 450px;
-  padding-right: 1rem; }
+  display: none; }
+  @media (min-width: 1000px) {
+    .about-img {
+      display: block;
+      width: 327px;
+      height: 450px;
+      padding-right: 1rem; } }
 
 .Portfolio {
-  height: 95vh;
   background-color: #4E4548;
   position: relative;
   color: #EFEFEF;
@@ -983,6 +997,12 @@ object {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center; }
+  @media (min-width: 1000px) {
+    .Portfolio {
+      height: 150vh; } }
+  @media (min-width: 1275px) {
+    .Portfolio {
+      height: 90vh; } }
 
 .portfolio-inner {
   height: 95%;
@@ -994,8 +1014,13 @@ object {
           flex-wrap: wrap; }
 
 .port-cont-single {
-  width: 33%;
   text-align: center; }
+  @media (min-width: 600px) {
+    .port-cont-single {
+      width: 50%; } }
+  @media (min-width: 1275px) {
+    .port-cont-single {
+      width: 33%; } }
 
 .port-title {
   text-align: center; }

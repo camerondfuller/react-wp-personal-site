@@ -19,7 +19,7 @@ var PageContent = React.createClass({
    render: function() {
       return (
          <div>
-            <div>
+            <div className="about-title">
                <h2 dangerouslySetInnerHTML={{__html: this.state.pageTitle}}></h2>
             </div>
             <div className="about-cont">
