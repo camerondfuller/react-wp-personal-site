@@ -70,27 +70,27 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   0% {
     position: absolute;
     opacity: 0;
-    left: -100; }
+    left: -100px; }
   100% {
     position: relative;
     opacity: 1;
-    left: 0; } }
+    left: 0px; } }
 
 @keyframes slide-appear-left {
   0% {
     position: absolute;
     opacity: 0;
-    left: -100; }
+    left: -100px; }
   100% {
     position: relative;
     opacity: 1;
-    left: 0; } }
+    left: 0px; } }
 
 @-webkit-keyframes slide-appear-right {
   0% {
     position: absolute;
     opacity: 0;
-    right: -100; }
+    right: -100px; }
   100% {
     position: relative;
     opacity: 1;
@@ -100,7 +100,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   0% {
     position: absolute;
     opacity: 0;
-    right: -100; }
+    right: -100px; }
   100% {
     position: relative;
     opacity: 1;
