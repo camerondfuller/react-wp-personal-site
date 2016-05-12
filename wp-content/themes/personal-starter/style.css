@@ -1100,11 +1100,13 @@ object {
 
 blockquote::before {
   content: "\"";
-  font-size: 30px; }
+  font-size: 30px;
+  float: left; }
 
 blockquote::after {
   content: "\"";
-  font-size: 30px; }
+  font-size: 30px;
+  float: right; }
 
 .Film {
   position: relative;

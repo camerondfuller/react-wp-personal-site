@@ -244,10 +244,12 @@ blockquote{
    &::before {
       content: "\"";
       font-size: 30px;
+      float: left;
    }
    &::after {
       content: "\"";
       font-size: 30px;
+      float: right;
    }
 }
 
