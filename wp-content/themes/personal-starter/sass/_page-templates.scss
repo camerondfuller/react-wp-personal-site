@@ -240,7 +240,16 @@
    left: -1500px;
    opacity: 0;
 }
-
+blockquote{
+   &::before {
+      content: "\"";
+      font-size: 30px;
+   }
+   &::after {
+      content: "\"";
+      font-size: 30px;
+   }
+}
 
 .Film {
    position: relative;
