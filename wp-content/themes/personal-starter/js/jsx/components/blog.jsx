@@ -1,16 +1,15 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
+import React, { PropTypes } from 'react';
 import BlogContent from './blog-content.jsx';
 
-var BlogLoop = React.createClass({
-
-   getInitialState: function() {
-      return {
+class BlogLoop extends React.Component {
+   constructor(props) {
+      super(props);
+      this.state = {
          postData:[],
          arrayIndex:0
-      };
-   },
-   componentWillMount: function() {
+      }
+   }
+   componentWillMount() {
       this.serverRequest = $.get(this.props.source, function (result) {
          var wpObject = result;
          console.log(wpObject);
@@ -18,24 +17,24 @@ var BlogLoop = React.createClass({
             postData: wpObject,
          });
       }.bind(this));
-   },
-   componentWillUnmount: function() {
+   }
+   componentWillUnmount() {
       this.serverRequest.abort();
-   },
-   nextPost:function() {
+   }
+   nextPost() {
       var max = this.state.arrayIndex + 1;
       if(max === this.state.postData.length) {
          this.setState({arrayIndex:0})
       } else {
          this.setState({arrayIndex:this.state.arrayIndex + 1});
       }
-   },
-   prevPost: function() {
+   }
+   prevPost() {
       if(this.state.arrayIndex!==0) {
          this.setState({arrayIndex:this.state.arrayIndex - 1})
       }
-   },
-   render: function() {
+   }
+   render() {
       return (
          <div className="double-column">
             <div className="single-column">
@@ -46,10 +45,8 @@ var BlogLoop = React.createClass({
                <div className="prev-class" onClick={this.prevPost}><i className="fa fa-angle-double-left"></i> Previous Post</div>
             </div>
          </div>
-
-      );
+      )
    }
+}
 
-});
-
-module.exports = BlogLoop;
+export default BlogLoop;
