@@ -1,17 +1,15 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
+import React, { PropTypes } from 'react';
 import PageContent from './page-content.jsx';
 
-
-
-var About = React.createClass({
-   getInitialState: function() {
-      return {
+class About extends React.Component {
+   constructor(props) {
+      super(props);
+      this.state = {
          pageObject:[],
          arrayIndex:this.props.order
-      };
-   },
-   componentWillMount: function() {
+      }
+   }
+   componentWillMount() {
       this.serverRequest = $.get(this.props.source, function (result) {
          var wpObject = result;
          console.log(wpObject);
@@ -19,20 +17,17 @@ var About = React.createClass({
             pageObject: wpObject,
          });
       }.bind(this));
-   },
-   componentWillUnmount: function() {
+   }
+   componentWillUnmount() {
       this.serverRequest.abort();
-   },
-   render: function() {
+   }
+   render () {
       return (
          <div className="container">
             <PageContent object={this.state.pageObject} arrayIndex={this.state.arrayIndex}/>
          </div>
       );
    }
-});
+}
 
-module.exports = About;
-
-//PropTypes
-//mediaID = the json object for the featured image based on the post
+export default About;
