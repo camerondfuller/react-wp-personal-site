@@ -1,15 +1,15 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
+import React, { PropTypes } from 'react';
 import ContactContent from './contact-content.jsx';
 
-var Contact = React.createClass({
-   getInitialState: function() {
-      return {
+class Contact extends React.Component {
+   constructor(props) {
+      super(props);
+      this.state = {
          pageData:[],
          arrayIndex:0
-      };
-   },
-   componentWillMount: function() {
+      }
+   }
+   componentWillMount() {
       this.serverRequest = $.get(this.props.source, function (result) {
          var wpObject = result;
          console.log(wpObject);
@@ -17,18 +17,17 @@ var Contact = React.createClass({
             pageData: wpObject,
          });
       }.bind(this));
-   },
-   componentWillUnmount: function() {
+   }
+   componentWillUnmount() {
       this.serverRequest.abort();
-   },
-   render: function() {
+   }
+   render () {
       return (
          <div className="container">
             <ContactContent object={this.state.pageData} arrayIndex={this.state.arrayIndex} />
          </div>
       );
    }
+}
 
-});
-
-module.exports = Contact;
+export default Contact;
