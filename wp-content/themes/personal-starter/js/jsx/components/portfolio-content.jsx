@@ -1,24 +1,24 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
+import React, { PropTypes } from 'react';
 
-var PageContent = React.createClass({
-   getInitialState: function() {
-      return {
+class PortfolioContent extends React.Component {
+   constructor(props){
+      super(props);
+      this.state = {
          pageTitle:'',
          pageContent:'',
          featuredImageURL:'',
          pageLink:false
-      };
-   },
-   componentWillReceiveProps: function(nextProps) {
-         this.setState({
-           pageTitle: nextProps.object[nextProps.arrayIndex].title.rendered,
-           pageContent:nextProps.object[nextProps.arrayIndex].content.rendered,
-           featuredImageURL:nextProps.object[nextProps.arrayIndex].featured_image_url,
-           pageLink:nextProps.object[nextProps.arrayIndex].acf.page_link
-         });
-     },
-   render: function() {
+      }
+   }
+   componentWillReceiveProps(nextProps) {
+      this.setState({
+        pageTitle: nextProps.object[nextProps.arrayIndex].title.rendered,
+        pageContent:nextProps.object[nextProps.arrayIndex].content.rendered,
+        featuredImageURL:nextProps.object[nextProps.arrayIndex].featured_image_url,
+        pageLink:nextProps.object[nextProps.arrayIndex].acf.page_link
+      });
+   }
+   render () {
       return (
          <div className="port-cont-single">
             <div className="port-title">
@@ -31,7 +31,6 @@ var PageContent = React.createClass({
          </div>
       );
    }
+}
 
-});
-
-module.exports = PageContent;
+export default PortfolioContent;
