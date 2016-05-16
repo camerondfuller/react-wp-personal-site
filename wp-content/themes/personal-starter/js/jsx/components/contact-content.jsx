@@ -1,27 +1,26 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
+import React, { PropTypes } from 'react';
 
-var ContactContent = React.createClass({
-   getInitialState: function() {
-      return {
+class ContactContent extends React.Component {
+   constructor(props) {
+      super(props);
+      this.state = {
          pageTitle:'',
          pageContent:''
-      };
-   },
-   componentWillReceiveProps: function(nextProps) {
-         this.setState({
-           pageTitle: nextProps.object[nextProps.arrayIndex].title.rendered,
-           pageContent:nextProps.object[nextProps.arrayIndex].content.rendered,
-         });
-     },
-   render: function() {
-      return (
-            <div className="double-column container">
-               <div className="single-column" dangerouslySetInnerHTML={{__html: this.state.pageContent}}></div>
-            </div>
-      );
+      }
    }
+   componentWillReceiveProps(nextProps) {
+      this.setState({
+        pageTitle: nextProps.object[nextProps.arrayIndex].title.rendered,
+        pageContent:nextProps.object[nextProps.arrayIndex].content.rendered,
+      });
+   }
+   render () {
+      return (
+         <div className="double-column container">
+            <div className="single-column" dangerouslySetInnerHTML={{__html: this.state.pageContent}}></div>
+         </div>
+      )
+   }
+}
 
-});
-
-module.exports = ContactContent;
+export default ContactContent;
