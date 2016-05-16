@@ -1,14 +1,15 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
-import PortfolioContent from './portfolio-content.jsx'
+import React, { PropTypes } from 'react';
+import PortfolioContent from './portfolio-content.jsx';
 
-var Portfolio = React.createClass({
-   getInitialState: function() {
-      return {
+
+class Portfolio extends React.Component {
+   constructor(props) {
+      super(props);
+      this.state = {
          pageData:[],
-      };
-   },
-   componentWillMount: function() {
+      }
+   }
+   componentWillMount() {
       this.serverRequest = $.get(this.props.source, function (result) {
          var wpObject = result;
          console.log(wpObject);
@@ -16,11 +17,11 @@ var Portfolio = React.createClass({
             pageData: wpObject,
          });
       }.bind(this));
-   },
-   componentWillUnmount: function() {
+   }
+   componentWillUnmount() {
       this.serverRequest.abort();
-   },
-   render: function() {
+   }
+   render () {
       return (
          <div>
             <div className="portfolio-inner container">
@@ -34,7 +35,6 @@ var Portfolio = React.createClass({
          </div>
       );
    }
+}
 
-});
-
-module.exports = Portfolio;
+export default Portfolio;
