@@ -1,22 +1,22 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
+import React, { PropTypes } from 'react';
 
-var PageContent = React.createClass({
-   getInitialState: function() {
-      return {
+class PageContent extends React.Component {
+   constructor(props) {
+      super(props);
+      this.state = {
          pageTitle:'',
          pageContent:'',
          featuredImageURL:''
-      };
-   },
-   componentWillReceiveProps: function(nextProps) {
-         this.setState({
-           pageTitle: nextProps.object[this.props.arrayIndex].title.rendered,
-           pageContent:nextProps.object[this.props.arrayIndex].content.rendered,
-           featuredImageURL:nextProps.object[this.props.arrayIndex].featured_image_url
-         });
-     },
-   render: function() {
+      }
+   }
+   componentWillReceiveProps(nextProps) {
+      this.setState({
+        pageTitle: nextProps.object[this.props.arrayIndex].title.rendered,
+        pageContent:nextProps.object[this.props.arrayIndex].content.rendered,
+        featuredImageURL:nextProps.object[this.props.arrayIndex].featured_image_url
+      });
+   }
+   render () {
       return (
          <div>
             <div className="about-title">
@@ -29,7 +29,6 @@ var PageContent = React.createClass({
          </div>
       );
    }
+}
 
-});
-
-module.exports = PageContent;
+export default PageContent;
