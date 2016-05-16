@@ -1,18 +1,17 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
+import React, { PropTypes } from 'react';
 import {browserHistory} from 'react-router';
 import BlogLoop from './blog.jsx';
 import About from './about.jsx';
 import Portfolio from './portfolio.jsx';
 import Contact from './contact.jsx';
 
-var HomePage = React.createClass({
-   showSidebar: (param) => {
+class HomePage extends React.Component {
+   showSidebar(param) {
       if(window.innerWidth >= 1275) {
          return param
       }
-   },
-   render: function() {
+   }
+   render () {
       return (
          <div className="home">
             {/*Beginning of header*/}
@@ -122,7 +121,6 @@ var HomePage = React.createClass({
          </div>
       );
    }
+}
 
-});
-
-module.exports = HomePage;
+export default HomePage;
